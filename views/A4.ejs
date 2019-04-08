@@ -13,7 +13,7 @@
 </head>
 <body>
 <!-- Simple header with scrollable tabs. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button">
     <header class="mdl-layout__header">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <div class="mdl-layout__header-row">
@@ -22,16 +22,16 @@
             <div class="mdl-layout-spacer"></div>
             <!--navigation bar-->
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href=""><i class="material-icons">account_circle</i> <%-aresult.name%> </a>
+                <a class="mdl-navigation__link" href=""><i class="material-icons">account_circle</i></a>
                 <a class="mdl-navigation__link" href="/login"><i class="material-icons">power_settings_new</i> Sign out </a>
             </nav>
         </div>
         <!-- Tabs -->
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-layout--large-screen-only">
-<a href="../A1" class="mdl-layout__tab">team management</a>
+            <a href="../A1" class="mdl-layout__tab">team management</a>
             <a href="../A2" class="mdl-layout__tab">judge management</a>
             <a href="../A3" class="mdl-layout__tab">administrator management</a>
-            <a href="#scroll-tab-3" class="mdl-layout__tab is-active">competition management</a>
+            <a href="#scroll-tab-4" class="mdl-layout__tab is-active">competition management</a>
         </div>
     </header>
     <!--drawer-->
@@ -41,6 +41,112 @@
             <input type="hidden" name="adminNum" value="4">
             <section class="mdl-layout__tab-panel is-active" id="scroll-tab-4">
                 <div class="page-content">
+                    <div class="mdl-grid">
+                        <div class="mdl-layout-spacer"></div>
+                        <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--8-col">
+                            <div class="mdl-card__title">
+                                <h1 class="mdl-card__title-text">Stop Challenges</h1>
+                            </div>
+                            <div class="mdl-card__supporting-text scrollable">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td style="width: 100%; text-align: center">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                <select class="mdl-textfield__input" id="challengeName" name="challengeName">
+                                                    <option></option>
+                                                    <option value="challenge1">challenge 1</option>
+                                                    <option value="challenge2">challenge 2</option>
+                                                    <option value="challenge2">challenge 3</option>
+                                                    <option value="challenge3">challenge 4</option>
+                                                </select>
+                                                <label class="mdl-textfield__label" for="challengeName">Challenge</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                    Stop
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mdl-layout-spacer"></div>
+                    </div>
+                    <div class="mdl-grid">
+                        <div class="mdl-layout-spacer"></div>
+                        <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--8-col">
+                            <div class="mdl-card__title">
+                                <h1 class="mdl-card__title-text">Challenge Timetable</h1>
+                            </div>
+                            <div class="mdl-card__supporting-text scrollable">
+                                <div class="mdui-table-fluid">
+                                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%">
+                                        <thead>
+                                        <tr>
+                                            <th class="mdl-data-table__cell--non-numeric">Challenge</th>
+                                            <th class="mdl-data-table__cell--non-numeric">Date</th>
+                                            <th class="mdl-data-table__cell--non-numeric">Start Time</th>
+                                            <th class="mdl-data-table__cell--non-numeric">End Time</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="mdl-data-table__cell--non-numeric">The Hubble Telescope Nebula Challenge</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="mdl-data-table__cell--non-numeric">The Canyons of Mars</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="mdl-data-table__cell--non-numeric">Blast Off: the Straight-ish Line Speed Test</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="mdl-data-table__cell--non-numeric">Pi Noon: The Right Stuff</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="mdl-data-table__cell--non-numeric">Space Invaders</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="mdl-data-table__cell--non-numeric">Spirit of Curiosity</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="mdl-data-table__cell--non-numeric">The Apollo 13 Obstacle Course</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                    Confirm
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mdl-layout-spacer"></div>
+                    </div>
+
+
                     <!-- judge management goes here -->
                     <!-- judge management goes here -->
                     <!-- judge management goes here -->
@@ -51,7 +157,7 @@
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">
                 <div class="mdl-logo"><a href="/privacy">Privacy & Terms</a></div>
-</div>
+            </div>
         </footer>
     </main>
 </div>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>login</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form name="login" method="post" action="/login" id="login">
+    <input type="text" name="username"></p>
+    <input type="password" name="password"></p>
+    <p><button type="submit">login</button> </p>
+    </form>
+    <script type="text/javascript" src="/jquery/dist/jquery.js">
+    </script>
+    <script>
+    $('#login').on('submit',function(e){
+    e.preventDefault()
+    var formD=$(this).serialize()
+        // alert('formD'+formD);
+    $.ajax({
+        url: '/login',
+        type: 'post',
+        data: formD,
+        dataType: 'json',
+        success: function (data) {
+          var err = data.err
+          if (err === 0) {
+              window.alert('Password or username is invalid.');
+          }else{
+              console.log(data.level);
+              if(data.level==3)
+                  window.location.href='/a4';
+              else
+                  window.location.href='/c1';
+          }
+        }
+      })
+    })
+    </script>
+  </body>
+</html>

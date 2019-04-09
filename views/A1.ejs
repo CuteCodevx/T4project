@@ -74,12 +74,13 @@
                     <!-- team management goes here -->
 
 <!--                    team one-->
-                    <form action="">
+                    <%for(var i = 0;i<result.length;i++){ %>
+                    <form action="" id = "showForm">
                         <div class="mdl-grid">
                             <div class="mdl-layout-spacer"></div>
                             <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--8-col">
                                 <div class="mdl-card__title">
-                                    <h1 class="mdl-card__title-text">Team 1</h1>
+                                    <h1 class="mdl-card__title-text"><%=result[i].name%></h1>
                                 </div>
                                 <div class="mdl-card__supporting-text scrollable">
                                     <h5>Basic Information</h5>
@@ -88,163 +89,164 @@
                                             <tbody>
                                             <tr>
                                                 <td>Team Name</td>
-                                                <td>team1</td>
+                                                <td><%=result[i].name%></td>
                                             </tr>
                                             <tr>
                                                 <td>Manager</td>
-                                                <td>Niko</td>
+                                                <td><%=result[i].manager%></td>
                                             </tr>
                                             <tr>
                                                 <td>Phone</td>
-                                                <td>11111111111111111</td>
+                                                <td><%=result[i].phone_number%></td>
                                             </tr>
                                             <tr>
                                                 <td>E-mail</td>
-                                                <td>11111111111111111@ggg.ccc</td>
+                                                <td><%=result[i].email%></td>
                                             </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                                 <div class="mdl-card__supporting-text scrollable">
-                                    <h5>Result Summary</h5>
+                                    <h5>Competition Information</h5>
                                     <div class="mdui-table-fluid">
                                         <table class="mdui-table">
                                             <thead>
                                             <tr>
-                                                <td>Challenges</td>
-                                                <td>Attempts</td>
+                                                <td>Competition</td>
+                                                <td>Attempt</td>
                                                 <td>Time</td>
-                                                <td>Additional Points</td>
+                                                <td>Reward</td>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <tr>
                                                 <td rowspan="4">The Hubble Telescope Nebula Challenge</td>
                                                 <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
+                                                <td><%=result[i].C1_1_time%></td>
+                                                <td><%=result[i].C1_1_reward%></td>
                                             </tr>
                                             <tr>
                                                 <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
+                                                <td><%=result[i].C1_2_time%></td>
+                                                <td><%=result[i].C1_2_reward%></td>
                                             </tr>
                                             <tr>
                                                 <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
+                                                <td><%=result[i].C1_3_time%></td>
+                                                <td><%=result[i].C1_3_reward%></td>
                                             </tr>
                                             <tr>
                                                 <td>total</td>
                                                 <td>4'30''</td>
-                                                <td>22</td>
+                                                <td><%=result[i].C1score%></td>
                                             </tr>
                                             <tr>
                                                 <td rowspan="4">The Canyons of Mars</td>
                                                 <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
+                                                <td><%=result[i].C2_1_time%></td>
+                                                <td><%=result[i].C2_1_reward%></td>
                                             </tr>
                                             <tr>
                                                 <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
+                                                <td><%=result[i].C2_2_time%></td>
+                                                <td><%=result[i].C2_2_reward%></td>
                                             </tr>
                                             <tr>
                                                 <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
+                                                <td><%=result[i].C2_3_time%></td>
+                                                <td><%=result[i].C2_3_reward%></td>
                                             </tr>
                                             <tr>
                                                 <td>total</td>
                                                 <td>4'30''</td>
-                                                <td>22</td>
+                                                <td><%=result[i].C2score%></td>
                                             </tr>
                                             <tr>
                                                 <td rowspan="4">Blast Off: the Straight-ish Line Speed Test</td>
                                                 <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
+                                                <td><%=result[i].C3_1_time%></td>
+                                                <td><%=result[i].C3_1_reward%></td>
                                             </tr>
                                             <tr>
                                                 <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
+                                                <td><%=result[i].C3_2_time%></td>
+                                                <td><%=result[i].C3_2_reward%></td>
                                             </tr>
                                             <tr>
                                                 <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
+                                                <td><%=result[i].C3_3_time%></td>
+                                                <td><%=result[i].C3_3_reward%></td>
                                             </tr>
                                             <tr>
                                                 <td>total</td>
                                                 <td>4'30''</td>
-                                                <td>22</td>
+                                                <td><%=result[i].C3score%></td>
                                             </tr>
                                             <tr>
                                                 <td>Pi Noon: The Right Stuff</td>
-                                                <td colspan="2">Number of wins: 22</td>
-                                                <td>2</td>
+                                                <td colspan="2">Number of wins: <%=result[i].C4_win%></td>
+                                                <td><%=result[i].C4_reward%></td>
+                                                <td><%=result[i].C4score%></td>
                                             </tr>
                                             <tr>
                                                 <td rowspan="4">Space Invaders</td>
                                                 <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
+                                                <td><%=result[i].C5_1_time%></td>
+                                                <td><%=result[i].C5_1_reward%></td>
                                             </tr>
                                             <tr>
                                                 <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
+                                                <td><%=result[i].C5_2_time%></td>
+                                                <td><%=result[i].C5_2_reward%></td>
                                             </tr>
                                             <tr>
                                                 <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
+                                                <td><%=result[i].C5_3_time%></td>
+                                                <td><%=result[i].C5_3_reward%></td>
                                             </tr>
                                             <tr>
                                                 <td>total</td>
                                                 <td>4'30''</td>
-                                                <td>22</td>
+                                                <td><%=result[i].C5score%></td>
                                             </tr>
                                             <tr>
                                                 <td>Spirit of Curiosity</td>
-                                                <td colspan="3">total points:30</td>
+                                                <td colspan="3">total points:<%=result[i].C6score%></td>
                                             </tr>
                                             <tr>
                                                 <td rowspan="4">The Apollo 13 Obstacle Course</td>
                                                 <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
+                                                <td><%=result[i].C7_1_time%></td>
+                                                <td><%=result[i].C7_1_reward%></td>
                                             </tr>
                                             <tr>
                                                 <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
+                                                <td><%=result[i].C7_2_time%></td>
+                                                <td><%=result[i].C7_2_reward%></td>
                                             </tr>
                                             <tr>
                                                 <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
+                                                <td><%=result[i].C7_3_time%></td>
+                                                <td><%=result[i].C7_3_reward%></td>
                                             </tr>
                                             <tr>
                                                 <td>total</td>
                                                 <td>4'30''</td>
-                                                <td>22</td>
+                                                <td><%=result[i].C7score%></td>
                                             </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                                 <div class="mdl-card__supporting-text scrollable">
-                                    <h5>Additional Points  By Expert Judges</h5>
+                                    <h5>Technical Scores</h5>
                                     <div class="mdui-table-fluid">
                                         <table class="mdui-table">
                                             <tbody>
                                             <tr>
-                                                <td style="width: 50%;">Additional Points  By Expert Judges</td>
-                                                <td>111</td>
+                                                <td style="width: 50%;">Technical Scores</td>
+                                                <td><%=result[i].C8score%></td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -255,7 +257,7 @@
                                     <div class="mdui-table-fluid">
                                         <table class="mdui-table">
                                             <td style="width: 50%;">Final score</td>
-                                            <td>1000</td>
+                                            <td><%=result[i].Cscore%></td>
                                         </table>
                                     </div>
                                 </div>
@@ -268,200 +270,8 @@
                             <div class="mdl-layout-spacer"></div>
                         </div>
                     </form>
-                    <form action="">
-                        <div class="mdl-grid">
-                            <div class="mdl-layout-spacer"></div>
-                            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--8-col">
-                                <div class="mdl-card__title">
-                                    <h1 class="mdl-card__title-text">Team 2</h1>
-                                </div>
-                                <div class="mdl-card__supporting-text scrollable">
-                                    <h5>Basic Information</h5>
-                                    <div class="mdui-table-fluid">
-                                        <table class="mdui-table">
-                                            <tbody>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td>team2</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Manager</td>
-                                                <td>Pasha</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Phone</td>
-                                                <td>11111111111111111</td>
-                                            </tr>
-                                            <tr>
-                                                <td>E-mail</td>
-                                                <td>11111111111111111@ggg.ccc</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="mdl-card__supporting-text scrollable">
-                                    <h5>Result Summary</h5>
-                                    <div class="mdui-table-fluid">
-                                        <table class="mdui-table">
-                                            <thead>
-                                            <tr>
-                                                <td>Challenges</td>
-                                                <td>Attempts</td>
-                                                <td>Time</td>
-                                                <td>Additional Points</td>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td rowspan="4">The Hubble Telescope Nebula Challenge</td>
-                                                <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>total</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td rowspan="4">The Canyons of Mars</td>
-                                                <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>total</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td rowspan="4">Blast Off: the Straight-ish Line Speed Test</td>
-                                                <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>total</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Pi Noon: The Right Stuff</td>
-                                                <td colspan="2">Number of wins: 22</td>
-                                                <td>2</td>
-                                            </tr>
-                                            <tr>
-                                                <td rowspan="4">Space Invaders</td>
-                                                <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>total</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Spirit of Curiosity</td>
-                                                <td colspan="3">total points:30</td>
-                                            </tr>
-                                            <tr>
-                                                <td rowspan="4">The Apollo 13 Obstacle Course</td>
-                                                <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>total</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="mdl-card__supporting-text scrollable">
-                                    <h5>Additional Points  By Expert Judges</h5>
-                                    <div class="mdui-table-fluid">
-                                        <table class="mdui-table">
-                                            <tbody>
-                                            <tr>
-                                                <td style="width: 50%;">Additional Points  By Expert Judges</td>
-                                                <td>111</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="mdl-card__supporting-text scrollable">
-                                    <h5>Final Score</h5>
-                                    <div class="mdui-table-fluid">
-                                        <table class="mdui-table">
-                                            <td style="width: 50%;">Final score</td>
-                                            <td>1000</td>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="mdl-card__actions">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                                        Confirm
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="mdl-layout-spacer"></div>
-                        </div>
-                    </form>
+                    <% } %>
+
                 </div>
         </section>
         <footer class="mdl-mini-footer">
@@ -473,5 +283,28 @@
 
 
 </div>
+<script type="text/javascript" src="/jquery/dist/jquery.js"></script>
+<script>
+    $(function () {
+        $("#search").click(function () {
+            var teamName = $('#team option:selected').val();
+
+            $.ajax({
+                url:'A1',
+                type:'post',
+                data:{'name':teamName},
+                success:function (result) {
+                    // var data = JSON.stringify(result);
+
+                    window.location.href='/A1?result='+result;
+                },
+                error:function (err,result) {
+                    console.log("wrong");
+                }
+            })
+
+        })
+    })
+</script>
 </body>
 </html>

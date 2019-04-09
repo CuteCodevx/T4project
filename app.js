@@ -21,7 +21,6 @@ var c6Router=require('./routes/c6');
 var c7Router=require('./routes/c7');
 var c8Router=require('./routes/c8');
 var pRouter=require('./routes/privacy');
-var homeRouter=require('./routes/home');
 
 var app = express();
 
@@ -58,7 +57,6 @@ app.use('/c6',c6Router);
 app.use('/c7',c7Router);
 app.use('/c8',c8Router);
 app.use('/privacy',pRouter);
-app.use('/home',homeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

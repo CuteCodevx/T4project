@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session=require('express-session');
 
-var indexRouter = require('./routes/index');
 var loginRouter= require('./routes/login');
 var a1Router=require('./routes/a1');
 //var a2Router=require('./routes/a2');
@@ -39,7 +38,7 @@ app.use(session({
     rollig:true
 }))
 
-app.use('/', indexRouter);
+app.use('/', loginRouter);
 app.use('/login',loginRouter);
 app.use('/a1',a1Router);
 //app.use('/a2',a2Router);

@@ -3,6 +3,8 @@ var router = express.Router();
 var handledata = require('../service/HandleData');
 /* GET users listing. */
 router.get('/', function (req, res){
+    if(!req.session.judge)
+        res.redirect('/login');
     handledata.search('teams',{},function(err,r){
         res.render('C5',{"jresult":req.session.judge[0],"tresult":r,"attempt":1,"methodOption":0});
     })

@@ -44,7 +44,7 @@
                     <form id="stopChallengeForm">
                         <div class="mdl-grid">
                         <div class="mdl-layout-spacer"></div>
-                        <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--8-col">
+                        <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--4-col">
                             <div class="mdl-card__title">
                                 <h1 class="mdl-card__title-text">Stop Challenges</h1>
                             </div>
@@ -52,7 +52,7 @@
                                 <table style="width: 100%">
                                     <tr>
                                         <td style="width: 100%; text-align: center">
-                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">
                                                 <select class="mdl-textfield__input" id="challengeName" name="name">
                                                     <%for(var i=0;i<cresult.name.length;i++){%>
                                                     <option><%-cresult.name[i]%></option>
@@ -82,18 +82,18 @@
                             </div>
                             <div class="mdl-card__supporting-text scrollable">
                                 <div class="mdui-table-fluid">
-                                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%">
+                                    <table class="mdui-table" style="width: 100%">
                                     <thead>
                                     <tr>
-                                        <th class="mdl-data-table__cell--non-numeric">Challenge</th>
-                                        <th class="mdl-data-table__cell--non-numeric">Date</th>
-                                        <th class="mdl-data-table__cell--non-numeric">Start Time</th>
-                                        <th class="mdl-data-table__cell--non-numeric">End Time</th>
+                                        <th>Challenge</th>
+                                        <th>Date</th>
+                                        <th>Start Time</th>
+                                        <th>End Time</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <%for(var i=0;i<7;i++){%>
-                                    <tr class="mdl-data-table__cell--non-numeric">
+                                    <tr>
                                         <td><%-cresult.name[i]%></td>
                                         <td><input type="date" name="date" value=<%-cresult.date[i]%>></td>
                                         <td><input type="time" name="start" value=<%-cresult.start[i]%>></td>

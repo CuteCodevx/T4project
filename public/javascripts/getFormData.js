@@ -29,9 +29,6 @@ $(document).ready(function() {
         // alert('disable finished');
     });
 
-
-
-
     
     $('#login').on('submit',function(e){
         e.preventDefault();

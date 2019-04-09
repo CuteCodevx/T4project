@@ -55,29 +55,29 @@ var handledata={
             var dbo=db.db(database);
             dbo.collection(form).updateOne(condition,{$set:data},function (err,result) {
                 if(err)
-                    console.log("Updating failed!")
-                else
-                    console.log("Success");
+                    console.log("Updating failed!");
                 db.close();
             })
         })
     },
-    // delete
-    delete:function (form,condition) {
-        MongoClient.connect(DBurl,function (err,db,form,data) {
+    // findsort
+    fsort:function (form,condition,callback) {
+        MongoClient.connect(DBurl,function (err,db) {
             if(err){
                 console.log(err);
                 console.log("can't connect to the database!");
                 return;
             }
             var dbo=db.db(database);
-            dbo.collection(form).deleteOne(condition,function (err,result) {
-                if(err)
-                    console.log("Deleting failed!")
+            var list=[];
+            var result=dbo.collection(form).find({}).sort(condition);
+            result.each(function (err,doc) {
+                if(doc!=null)
+                    list.push(doc);
                 else
-                    console.log("Success");
-                db.close();
+                    callback(list);
             })
+            db.close();
         })
     }
 }

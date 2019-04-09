@@ -13,7 +13,6 @@ router.post('/', function(req, res, next) {
         if(result.length>0){
             console.log('admin account');
             req.session.admin=result;
-            console.log('admin level'+result[0].level);
             res.send(result[0]);
             // res.redirect("/admin");
         }else{

@@ -29,35 +29,33 @@ $(document).ready(function() {
         // alert('disable finished');
     });
 
+    
+    $('#login').on('submit',function(e){
+        e.preventDefault();
 
+        var loginInfo={};
+        loginInfo['username'] = $('#username').val();
+        loginInfo['password'] = $('#password').val();
 
+        $.ajax({
+            url: '/login',
+            type: 'post',
+            data: loginInfo,
+            dataType: 'json',
+            success: function (data) {
+              var err = data.err
+              if (err === 0) {
+                  window.alert('Password or username is invalid.');
+              }else{
+                  console.log(data.level);
+                  if(data.level==3)
+                      window.location.href='/a1';
+                  else
+                      window.location.href='/c1';
+              }
+            }
+          })
+        });
 
-    // $('form').on('submit', function(event) {
-    //
-    //     event.preventDefault();
-    //
-    //     var d={};
-    //
-    //     // [{name: "a1", value: "xx"},{name: "a2", value: "xx"}],
-    //     var wholeForm = $('form').serializeArray();
-    //
-    //     $.each(wholeForm, function() {
-    //         d[this.name] = this.value;
-    //     });
-    //
-    //     alert(JSON.stringify(d));
-    //
-    //     $.ajax({
-    //         type: 'post',
-    //         url: '/c1',
-    //         data: d,
-    //         // success: function(data) {
-    //         //     //do something with the data via front-end framework
-    //         //     location.reload();
-    //         // }
-    //     });
-    //
-    //     return false;
-    //
-    // });
+    
 });

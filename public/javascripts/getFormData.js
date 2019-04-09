@@ -45,7 +45,7 @@ $(document).ready(function() {
             success: function (data) {
               var err = data.err
               if (err === 0) {
-                  window.alert('Password or username is invalid.');
+                  $("#invalidAlert").show();
               }else{
                   console.log(data.level);
                   if(data.level==3)

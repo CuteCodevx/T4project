@@ -7,8 +7,8 @@ var session=require('express-session');
 
 var loginRouter= require('./routes/login');
 var a1Router=require('./routes/a1');
-//var a2Router=require('./routes/a2');
-//var a3Router=require('./routes/a3');
+var a2Router=require('./routes/a2');
+var a3Router=require('./routes/a3');
 var a4Router=require('./routes/a4');
 var c1Router=require('./routes/c1');
 var c2Router=require('./routes/c2');
@@ -41,8 +41,8 @@ app.use(session({
 app.use('/', loginRouter);
 app.use('/login',loginRouter);
 app.use('/a1',a1Router);
-//app.use('/a2',a2Router);
-//app.use('/a3',a3Router);
+app.use('/a2',a2Router);
+app.use('/a3',a3Router);
 app.use('/a4',a4Router);
 app.use('/c1',c1Router);
 app.use('/c2',c2Router);

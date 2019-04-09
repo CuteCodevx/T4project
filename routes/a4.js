@@ -6,7 +6,7 @@ var scoring=require('./scoring');
 /* GET users listing. */
 router.get('/', function (req, res){
     if(!req.session.admin)
-        res.render('index');
+        res.redirect('/login');
     challengemodel.findOne({'index':[1,2,3,4,5,6,7]},function(err,r){
         res.render('A4',{"aresult":req.session.admin[0],"cresult":r});
     })

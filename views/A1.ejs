@@ -38,11 +38,11 @@
 
     <main class="mdl-layout__content">
         <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
-                <input type="hidden" name="adminNum" value="1">
                 <div class="page-content">
 <!--                    team selection and search-->
-                    <form>
-                    <div class="mdl-grid">
+                    <form id="adminNum1">
+                        <input type="hidden" name="adminNum" value="1">
+                        <div class="mdl-grid">
                         <div class="mdl-layout-spacer"></div>
                         <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--4-col">
                             <div class="mdl-card__title">
@@ -84,23 +84,23 @@
                                 <div class="mdl-card__supporting-text scrollable">
                                     <h5>Basic Information</h5>
                                     <div class="mdui-table-fluid">
-                                        <table class="mdui-table">
+                                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" width="100%">
                                             <tbody>
                                             <tr>
                                                 <td>Team Name</td>
-                                                <td>team1</td>
+                                                <td><input type="text" name="teamName" value="team1"></td>
                                             </tr>
                                             <tr>
                                                 <td>Manager</td>
-                                                <td>Niko</td>
+                                                <td><input type="text" name="manager" value="manager"></td>
                                             </tr>
                                             <tr>
                                                 <td>Phone</td>
-                                                <td>11111111111111111</td>
+                                                <td><input type="tel" name="phoneNum" value="1111"></td>
                                             </tr>
                                             <tr>
                                                 <td>E-mail</td>
-                                                <td>11111111111111111@ggg.ccc</td>
+                                                <td><input type="email" name="eMail" value="111@qq.qqq"></td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -109,128 +109,112 @@
                                 <div class="mdl-card__supporting-text scrollable">
                                     <h5>Result Summary</h5>
                                     <div class="mdui-table-fluid">
-                                        <table class="mdui-table">
+                                        <table class="mdui-table" width="100%">
                                             <thead>
                                             <tr>
-                                                <td>Challenges</td>
-                                                <td>Attempts</td>
-                                                <td>Time</td>
-                                                <td>Additional Points</td>
+                                                <th>Challenges</th>
+                                                <th>Attempts</th>
+                                                <th>Time</th>
+                                                <th>Additional Points</th>
+                                                <th>Total Scores</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <tr>
-                                                <td rowspan="4">The Hubble Telescope Nebula Challenge</td>
+                                                <td rowspan="3">The Hubble Telescope Nebula Challenge</td>
+                                                <td>attempt 1</td>
+                                                <td><input type="number" name="C1_1_time"></td>
+                                                <td><input type="number" name="C1_1_reward"></td>
+                                                <td rowspan="3"><input type="number" name="C1score"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>attempt 2</td>
+                                                <td><input type="number" name="C1_2_time"></td>
+                                                <td><input type="number" name="C1_2_reward"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>attempt 3</td>
+                                                <td><input type="number" name="C1_3_time"></td>
+                                                <td><input type="number" name="C1_3_reward"></td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="3">The Canyons of Mars</td>
                                                 <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
+                                                <td><input type="number" name="C2_1_time"></td>
+                                                <td><input type="number" name="C2_1_reward"></td>
+                                                <td rowspan="3"><input type="number" name="C2score"></td>
                                             </tr>
                                             <tr>
                                                 <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
+                                                <td><input type="number" name="C2_2_time"></td>
+                                                <td><input type="number" name="C2_2_reward"></td>
                                             </tr>
                                             <tr>
                                                 <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
+                                                <td><input type="number" name="C2_3_time"></td>
+                                                <td><input type="number" name="C2_3_reward"></td>
                                             </tr>
                                             <tr>
-                                                <td>total</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td rowspan="4">The Canyons of Mars</td>
+                                                <td rowspan="3">Blast Off: the Straight-ish Line Speed Test</td>
                                                 <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
+                                                <td><input type="number" name="C3_1_time"></td>
+                                                <td><input type="number" name="C3_1_reward"></td>
+                                                <td rowspan="3"><input type="number" name="C3score"></td>
                                             </tr>
                                             <tr>
                                                 <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
+                                                <td><input type="number" name="C3_2_time"></td>
+                                                <td><input type="number" name="C3_2_reward"></td>
                                             </tr>
                                             <tr>
                                                 <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
+                                                <td><input type="number" name="C3_3_time"></td>
+                                                <td><input type="number" name="C3_3_reward"></td>
                                             </tr>
-                                            <tr>
-                                                <td>total</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td rowspan="4">Blast Off: the Straight-ish Line Speed Test</td>
-                                                <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>total</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
+
                                             <tr>
                                                 <td>Pi Noon: The Right Stuff</td>
-                                                <td colspan="2">Number of wins: 22</td>
-                                                <td>2</td>
+                                                <td colspan="2">Number of wins: <input type="number" name="C4_win"></td>
+                                                <td><input type="number" name="C4_reward"></td>
+                                                <td><input type="number" name="C4score"></td>
                                             </tr>
                                             <tr>
-                                                <td rowspan="4">Space Invaders</td>
+                                                <td rowspan="3">Space Invaders</td>
                                                 <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
+                                                <td><input type="number" name="C5_1_time"></td>
+                                                <td><input type="number" name="C5_1_reward"></td>
+                                                <td rowspan="3"><input type="number" name="C5score"></td>
                                             </tr>
                                             <tr>
                                                 <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
+                                                <td><input type="number" name="C5_2_time"></td>
+                                                <td><input type="number" name="C5_2_reward"></td>
                                             </tr>
                                             <tr>
                                                 <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>total</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
+                                                <td><input type="number" name="C5_3_time"></td>
+                                                <td><input type="number" name="C5_3_reward"></td>
                                             </tr>
                                             <tr>
                                                 <td>Spirit of Curiosity</td>
-                                                <td colspan="3">total points:30</td>
+                                                <td colspan="3" style="text-align: right">total points:</td>
+                                                <td><input type="number" name="C6score"></td>
                                             </tr>
                                             <tr>
-                                                <td rowspan="4">The Apollo 13 Obstacle Course</td>
+                                                <td rowspan="3">The Apollo 13 Obstacle Course</td>
                                                 <td>1st attempt</td>
-                                                <td>3'30''</td>
+                                                <td><input type="number" name="C7_1_time"></td>
                                                 <td>66</td>
+                                                <td rowspan="3"><input type="number" name="C7score"></td>
                                             </tr>
                                             <tr>
                                                 <td>2nd attempt</td>
-                                                <td>3'30''</td>
+                                                <td><input type="number" name="C7_2_time"></td>
                                                 <td>66</td>
                                             </tr>
                                             <tr>
                                                 <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>total</td>
-                                                <td>4'30''</td>
+                                                <td><input type="number" name="C7_3_time"></td>
                                                 <td>22</td>
                                             </tr>
                                             </tbody>
@@ -244,7 +228,7 @@
                                             <tbody>
                                             <tr>
                                                 <td style="width: 50%;">Additional Points  By Expert Judges</td>
-                                                <td>111</td>
+                                                <td><input type="number" name="C8score"></td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -255,201 +239,7 @@
                                     <div class="mdui-table-fluid">
                                         <table class="mdui-table">
                                             <td style="width: 50%;">Final score</td>
-                                            <td>1000</td>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="mdl-card__actions">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                                        Confirm
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="mdl-layout-spacer"></div>
-                        </div>
-                    </form>
-                    <form action="">
-                        <div class="mdl-grid">
-                            <div class="mdl-layout-spacer"></div>
-                            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--8-col">
-                                <div class="mdl-card__title">
-                                    <h1 class="mdl-card__title-text">Team 2</h1>
-                                </div>
-                                <div class="mdl-card__supporting-text scrollable">
-                                    <h5>Basic Information</h5>
-                                    <div class="mdui-table-fluid">
-                                        <table class="mdui-table">
-                                            <tbody>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td>team2</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Manager</td>
-                                                <td>Pasha</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Phone</td>
-                                                <td>11111111111111111</td>
-                                            </tr>
-                                            <tr>
-                                                <td>E-mail</td>
-                                                <td>11111111111111111@ggg.ccc</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="mdl-card__supporting-text scrollable">
-                                    <h5>Result Summary</h5>
-                                    <div class="mdui-table-fluid">
-                                        <table class="mdui-table">
-                                            <thead>
-                                            <tr>
-                                                <td>Challenges</td>
-                                                <td>Attempts</td>
-                                                <td>Time</td>
-                                                <td>Additional Points</td>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td rowspan="4">The Hubble Telescope Nebula Challenge</td>
-                                                <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>total</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td rowspan="4">The Canyons of Mars</td>
-                                                <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>total</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td rowspan="4">Blast Off: the Straight-ish Line Speed Test</td>
-                                                <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>total</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Pi Noon: The Right Stuff</td>
-                                                <td colspan="2">Number of wins: 22</td>
-                                                <td>2</td>
-                                            </tr>
-                                            <tr>
-                                                <td rowspan="4">Space Invaders</td>
-                                                <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>total</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Spirit of Curiosity</td>
-                                                <td colspan="3">total points:30</td>
-                                            </tr>
-                                            <tr>
-                                                <td rowspan="4">The Apollo 13 Obstacle Course</td>
-                                                <td>1st attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2nd attempt</td>
-                                                <td>3'30''</td>
-                                                <td>66</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3rd attempt</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>total</td>
-                                                <td>4'30''</td>
-                                                <td>22</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="mdl-card__supporting-text scrollable">
-                                    <h5>Additional Points  By Expert Judges</h5>
-                                    <div class="mdui-table-fluid">
-                                        <table class="mdui-table">
-                                            <tbody>
-                                            <tr>
-                                                <td style="width: 50%;">Additional Points  By Expert Judges</td>
-                                                <td>111</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="mdl-card__supporting-text scrollable">
-                                    <h5>Final Score</h5>
-                                    <div class="mdui-table-fluid">
-                                        <table class="mdui-table">
-                                            <td style="width: 50%;">Final score</td>
-                                            <td>1000</td>
+                                            <td><input type="number" name="Cscore"></td>
                                         </table>
                                     </div>
                                 </div>

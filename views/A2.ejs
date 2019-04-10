@@ -37,7 +37,7 @@
     <!--drawer-->
 
     <main class="mdl-layout__content">
-        <form>
+        <form id="adminNum2">
             <input type="hidden" name="adminNum" value="2">
             <section class="mdl-layout__tab-panel is-active" id="scroll-tab-2">
             <div class="page-content">
@@ -91,8 +91,8 @@
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td>judge1</td>
-                                            <td>123456</td>
+                                            <td><input type="text" name="name"></td>
+                                            <td><input type="text" name="password"></td>
                                             <td>
                                                 <select class="mdui-select">
                                                     <option value="1" selected>Volunteer Judge</option>
@@ -113,48 +113,6 @@
                         <div class="mdl-layout-spacer"></div>
                     </div>
                 </form>
-                <form action="">
-                    <div class="mdl-grid">
-                        <div class="mdl-layout-spacer"></div>
-                        <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--8-col">
-                            <div class="mdl-card__title">
-                                <h1 class="mdl-card__title-text">Judge2</h1>
-                            </div>
-                            <div class="mdl-card__supporting-text scrollable">
-                                <div class="mdui-table-fluid">
-                                    <table class="mdui-table">
-                                        <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                            <td>Password</td>
-                                            <td>Permission</td>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>judge2</td>
-                                            <td>123123</td>
-                                            <td>
-                                                <select class="mdui-select">
-                                                    <option value="1">Volunteer Judge</option>
-                                                    <option value="2" selected>Expert Judge</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="mdl-card__actions">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                                    Confirm
-                                </button>
-                            </div>
-                        </div>
-                        <div class="mdl-layout-spacer"></div>
-                    </div>
-                </form>
-
             </div>
         </section>
         </form>

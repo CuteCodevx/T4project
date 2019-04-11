@@ -70,9 +70,11 @@
                 <label class="mdl-textfield__label" for="password">password</label>
                 </div>
             <br>
-            <p style="color: red" hidden>
-                Invalid username or password!
-            </p>
+                <div id="invalidAlert" style="display: none;">
+                    <p style="color: red">
+                        Invalid username or password!
+                    </p>
+                </div>
             </div>
             <div class="mdui-dialog-actions">
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">

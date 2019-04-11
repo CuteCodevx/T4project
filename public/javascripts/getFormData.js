@@ -45,7 +45,7 @@ $(document).ready(function() {
             success: function (data) {
               var err = data.err
               if (err === 0) {
-                  window.alert('Password or username is invalid.');
+                  $("#invalidAlert").show();
               }else{
                   console.log(data.level);
                   if(data.level==3)
@@ -57,5 +57,92 @@ $(document).ready(function() {
           })
         });
 
-    
+
+
+//    For A2.ejs
+    $('#A2Form1').on('submit',function(e){
+        e.preventDefault();
+
+        var searchInfo={};
+        searchInfo['judge'] = $('#judge').val();
+        searchInfo['button'] = 'search';
+
+        $.ajax({
+            url: '/a2',
+            type: 'post',
+            data: searchInfo,
+            dataType: 'json',
+            success: function (data) {
+                window.location.href='/a2';
+            }
+        })
+    });
+
+
+    $('#A2Form2').on('submit',function(e){
+        e.preventDefault();
+
+        var formData=$('#A2Form2').serializeArray();
+        formData['button']='confirm';
+
+        $.each(formData, function() {
+            formData[this.name] = this.value;
+        });
+
+        $.ajax({
+            url:'/a2',
+            type:'post',
+            data:formData,
+            dataType:'json',
+            success:function () {
+                window.location.href='/a2';
+            }
+        })
+    });
+
+//    For A3.ejs
+    $('#A3Form1').on('submit',function(e){
+        e.preventDefault();
+
+        var addInfo=$('#A3Form1').serializeArray();
+        addInfo['button']='addJudge';
+
+        $.each(addInfo, function() {
+            addInfo[this.name] = this.value;
+        });
+
+        $.ajax({
+            url: '/a3',
+            type: 'post',
+            data: addInfo,
+            dataType: 'json',
+            success: function (data) {
+                window.location.href='/a3';
+            }
+        })
+    });
+
+
+    $('#A3Form2').on('submit',function(e){
+
+        e.preventDefault();
+
+        var formData=$('#A3Form2').serializeArray();
+        formData['button']='addTeam';
+
+        $.each(formData, function() {
+            formData[this.name] = this.value;
+        });
+
+        $.ajax({
+            url:'/a3',
+            type:'post',
+            data:formData,
+            dataType:'json',
+            success:function () {
+                window.location.href='/a3';
+            }
+        })
+    });
+
 });

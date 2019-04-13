@@ -54,95 +54,111 @@ $(document).ready(function() {
                       window.location.href='/c1';
               }
             }
-          })
-        });
-
-
-
-//    For A2.ejs
-    $('#A2Form1').on('submit',function(e){
-        e.preventDefault();
-
-        var searchInfo={};
-        searchInfo['judge'] = $('#judge').val();
-        searchInfo['button'] = 'search';
-
-        $.ajax({
-            url: '/a2',
-            type: 'post',
-            data: searchInfo,
-            dataType: 'json',
-            success: function (data) {
-                window.location.href='/a2';
-            }
         })
     });
 
-
-    $('#A2Form2').on('submit',function(e){
-        e.preventDefault();
-
-        var formData=$('#A2Form2').serializeArray();
-        formData['button']='confirm';
-
-        $.each(formData, function() {
-            formData[this.name] = this.value;
-        });
-
-        $.ajax({
-            url:'/a2',
-            type:'post',
-            data:formData,
-            dataType:'json',
-            success:function () {
-                window.location.href='/a2';
-            }
-        })
-    });
+//
+//
+// //    For A2.ejs
+//     $('#A2Form1').on('submit',function(e){
+//         e.preventDefault();
+//
+//         // var searchInfo={};
+//         // searchInfo['judge'] = $('#judge').val();
+//         // searchInfo['button'] = 'search';
+//         //
+//         // $.ajax({
+//         //     url: '/a2',
+//         //     type: 'post',
+//         //     data: searchInfo,
+//         //     dataType: 'json',
+//         //     success: function (data) {
+//         //         window.location.href='/a2';
+//         //     }
+//         // })
+//         var judgeName = $('#judge option:selected').val();
+//         console.log("A2 form1 search");
+//         $.ajax({
+//             url:'A2',
+//             type:'post',
+//             data:{'name':judgeName},
+//             success:function (result) {
+//                 console.log("success 111");
+//                 //window.location.href='/A2?result='+result;
+//             },
+//             error:function (err,result) {
+//                 console.log("wrong");
+//             }
+//         })
+//     });
+//
+//
+//
+//     $('#A2Form2').on('submit',function(e){
+//         e.preventDefault();
+//         console.log("A2 form2 confirm");
+//         var formData=$('#A2Form2').serializeArray();
+//         formData['button']='confirm';
+//
+//         $.each(formData, function() {
+//             formData[this.name] = this.value;
+//         });
+//
+//         $.ajax({
+//             url:'A2',
+//             type:'post',
+//             data:formData,
+//             dataType:'json',
+//             success:function () {
+//                 console.log("success222222");
+//                // window.location.href='/a2';
+//             }
+//         })
+//     });
 
 //    For A3.ejs
-    $('#A3Form1').on('submit',function(e){
-        e.preventDefault();
-
-        var addInfo=$('#A3Form1').serializeArray();
-        addInfo['button']='addJudge';
-
-        $.each(addInfo, function() {
-            addInfo[this.name] = this.value;
-        });
-
-        $.ajax({
-            url: '/a3',
-            type: 'post',
-            data: addInfo,
-            dataType: 'json',
-            success: function (data) {
-                window.location.href='/a3';
-            }
-        })
-    });
-
-
-    $('#A3Form2').on('submit',function(e){
-
-        e.preventDefault();
-
-        var formData=$('#A3Form2').serializeArray();
-        formData['button']='addTeam';
-
-        $.each(formData, function() {
-            formData[this.name] = this.value;
-        });
-
-        $.ajax({
-            url:'/a3',
-            type:'post',
-            data:formData,
-            dataType:'json',
-            success:function () {
-                window.location.href='/a3';
-            }
-        })
-    });
+//     $('#A3Form1').on('submit',function(e){
+//         e.preventDefault();
+//
+//         var addInfo=$('#A3Form1').serializeArray();
+//         addInfo['button']='addJudge';
+//
+//         $.each(addInfo, function() {
+//             addInfo[this.name] = this.value;
+//         });
+//
+//         $.ajax({
+//             url: '/a3',
+//             type: 'post',
+//             data: addInfo,
+//             dataType: 'json',
+//             success: function (data) {
+//                 window.location.href='/a3';
+//             }
+//         })
+//     });
+//
+//
+//     $('#A3Form2').on('submit',function(e){
+//
+//         e.preventDefault();
+//
+//         var formData=$('#A3Form2').serializeArray();
+//         formData['button']='addTeam';
+//
+//         $.each(formData, function() {
+//             formData[this.name] = this.value;
+//         });
+//
+//         $.ajax({
+//             url:'/a3',
+//             type:'post',
+//             data:formData,
+//             dataType:'json',
+//             success:function () {
+//                 window.location.href='/a3';
+//             }
+//         })
+//     });
 
 });

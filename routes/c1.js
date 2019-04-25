@@ -6,7 +6,9 @@ router.get('/', function (req, res){
     if(!req.session.judge)
         res.redirect('/login');
     handledata.search('teams',{},function(err,r){
-        res.render('C1',{"jresult":req.session.judge[0],"tresult":r,"attempt":1,"methodOption":0});
+        handledata.search('challenges',{"index":1},function(err,rr){
+            res.render('C1',{"jresult":req.session.judge[0],"tresult":r,"attempt":1,"methodOption":0,"status":rr[0].status});
+        })
     })
 })
 router.post('/',function (req,res) {

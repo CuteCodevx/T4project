@@ -26,13 +26,14 @@ router.post('/',function (req,res) {
         })
     }
     if(req.body.button=='1'){
-        handledata.search('challenges',{"name":req.body.name},function (err,result) {
+        handledata.search('challengesPi',{"name":req.body.name},function (err,result) {
             if(result.length>0){
-                handledata.update('challenges',{"name":req.body.name},{"status":0});
+                handledata.update('challengesPi',{"name":req.body.name},{"status":0});
                 var cNum=result[0].index;
                 scoring.calculate(cNum);
             }
         })
     }
+    res.send("");
 })
 module.exports=router;

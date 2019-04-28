@@ -5,34 +5,20 @@ var handledata = require('../service/HandleData');
 router.get('/', function (req, res){
     if(!req.session.judge)
         res.redirect('/login');
-    handledata.search('teams',{},function(err,rr){
-        handledata.search('challengesPi',{'index':2},function(err,r) {
-            res.render('C2', {"jresult": req.session.judge[0], "tresult": rr, "attempt": 1,"status":r[0].status});
-        })
+    handledata.search('teams',{},function(err,r){
+        res.render('C2',{"jresult":req.session.judge[0],"tresult":r,"attempt":1});
     })
 })
 router.post('/',function (req,res) {
     console.log(req.body);
     handledata.search('teams',{},function (err,r) {
-        handledata.search('challengesPi', {'index': 2}, function (err, result) {
-            var attempt = Number(req.body.attempt) + 1;
-            if (attempt > 3)
-                attempt -= 3;
-            if (attempt != 1)
-                res.render('C2', {
-                    "jresult": req.session.judge[0],
-                    "tresult": [{"name": req.body.team}],
-                    "attempt": attempt,
-                    "status": result[0].status
-                });
-            else
-                res.render('C2', {
-                    "jresult": req.session.judge[0],
-                    "tresult": r,
-                    "attempt": attempt,
-                    "status": result[0].status
-                });
-        })
+        var attempt=Number(req.body.attempt)+1;
+        if(attempt>3)
+            attempt-=3;
+        if(attempt!=1)
+            res.render('C2',{"jresult":req.session.judge[0],"tresult":[{"name":req.body.team}],"attempt":attempt});
+        else
+            res.render('C2',{"jresult":req.session.judge[0],"tresult":r,"attempt":attempt});
     })
     if(req.body.min!=''&&req.body.sec!=''){
         var time=Number(req.body.min)*60+Number(req.body.sec);

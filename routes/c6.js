@@ -5,17 +5,13 @@ var handledata = require('../service/HandleData');
 router.get('/', function (req, res){
     if(!req.session.judge)
         res.redirect('/login');
-    handledata.search('teams',{},function(err,rr){
-        handledata.search('challengesPi',{'index':6},function(err,r) {
-            res.render('C6', {"jresult": req.session.judge[0], "tresult": rr, "status": r[0].status});
-        })
+    handledata.search('teams',{},function(err,r){
+        res.render('C6',{"jresult":req.session.judge[0],"tresult":r});
     })
 })
 router.post('/',function (req,res) {
     handledata.search('teams',{},function(err,r){
-        handledata.search('challengesPi', {'index': 1}, function (err, result) {
-            res.render('C6', {"jresult": req.session.judge[0], "tresult": r, "status":result[0].status});
-        })
+        res.render('C6',{"jresult":req.session.judge[0],"tresult":r});
     })
     if(req.body.team!=''&&req.body.points!=''){
         var pts=(Number(req.body.points)>5)?45*Number(req.body.points)+40:45*Number(req.body.points);

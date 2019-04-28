@@ -14,7 +14,7 @@ router.get('/', function (req, res){
 router.post('/',function (req,res) {
     scoring.min();
     if(req.body.button=='2'){
-        challengemodel.update({'index':[1,2,3,4,5,6,7]},{
+        challengemodel.updateOne({'index':[1,2,3,4,5,6,7]},{
             'start': req.body.start,
             'end': req.body.end
         }, function (err) {

@@ -47,7 +47,6 @@ $(document).ready(function() {
               if (err === 0) {
                   $("#invalidAlert").show();
               }else{
-                  console.log(data.level);
                   if(data.level==3)
                       window.location.href='/a1';
                   else

@@ -1,6 +1,6 @@
 var MongoClient=require('mongodb').MongoClient;
 var ObjectId=require('mongodb').ObjectID;
-var DBurl='mongodb://localhost:27017/Piwar';
+var DBurl='mongodb+srv://admin:123@cluster0-mozuc.mongodb.net/test?retryWrites=true';
 var ejs=require('ejs');
 var database='Piwar';
 

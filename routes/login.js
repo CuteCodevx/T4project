@@ -11,10 +11,8 @@ router.post('/', function(req, res, next) {
     var condition={"name":req.body.username,"password":req.body.password};
     handledata.search('admins',condition,function(err,result){
         if(result.length>0){
-            console.log('admin account');
             req.session.admin=result;
             res.send(result[0]);
-            // res.redirect("/admin");
         }else{
             handledata.search('judges',condition,function(error,r){
                 if(r.length>0){

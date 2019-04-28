@@ -5,13 +5,17 @@ var handledata = require('../service/HandleData');
 router.get('/', function (req, res){
     if(!req.session.judge)
         res.redirect('/login');
-    handledata.search('teams',{},function(err,r){
-        res.render('C4',{"jresult":req.session.judge[0],"tresult":r});
+    handledata.search('teams',{},function(err,rr){
+        handledata.search('challenges',{'index':4},function(err,r) {
+            res.render('C4', {"jresult": req.session.judge[0], "tresult": rr, "status": r[0].status});
+        })
     })
 })
 router.post('/',function (req,res) {
     handledata.search('teams',{},function(err,r){
-        res.render('C4',{"jresult":req.session.judge[0],"tresult":r});
+        handledata.search('challenges', {'index': 1}, function (err, result) {
+            res.render('C4', {"jresult": req.session.judge[0], "tresult": r, "status":result[0].status});
+        })
     })
     var name=(req.body.additional=='red')?req.body.teamRed:req.body.teamBlue;
     var reward=Number(req.body.points);

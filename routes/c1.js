@@ -5,21 +5,36 @@ var handledata = require('../service/HandleData');
 router.get('/', function (req, res){
     if(!req.session.judge)
         res.redirect('/login');
-    handledata.search('teams',{},function(err,r){
-        handledata.search('challenges',{"index":1},function(err,rr){
-            res.render('C1',{"jresult":req.session.judge[0],"tresult":r,"attempt":1,"methodOption":0,"status":rr[0].status});
+
+    handledata.search('teams',{},function(err,rr){
+        handledata.search('challenges',{'index': 1},function(err,result){
+            res.render('C1',{"jresult":req.session.judge[0],"tresult":rr,"attempt":1,"methodOption":0,"status":result[0].status});
         })
     })
 })
 router.post('/',function (req,res) {
     handledata.search('teams',{},function (err,r) {
-        var attempt=Number(req.body.attempt)+1;
-        if(attempt>3)
-            attempt-=3;
-        if(attempt!=1)
-            res.render('C1',{"jresult":req.session.judge[0],"tresult":[{"name":req.body.team}],"attempt":attempt,"methodOption":req.body.methodOption});
-        else
-            res.render('C1',{"jresult":req.session.judge[0],"tresult":r,"attempt":attempt,"methodOption":req.body.methodOption});
+        handledata.search('challenges', {'index': 1}, function (err, result) {
+            var attempt = Number(req.body.attempt) + 1;
+            if (attempt > 3)
+                attempt -= 3;
+            if (attempt != 1)
+                res.render('C1', {
+                    "jresult": req.session.judge[0],
+                    "tresult": [{"name": req.body.team}],
+                    "attempt": attempt,
+                    "methodOption": req.body.methodOption,
+                    "status":result[0].status
+                });
+            else
+                res.render('C1', {
+                    "jresult": req.session.judge[0],
+                    "tresult": r,
+                    "attempt": attempt,
+                    "methodOption": req.body.methodOption,
+                    "status":result[0].status
+                });
+        })
     })
     if(req.body.min!=''&&req.body.sec!=''){
         var name=req.body.team;

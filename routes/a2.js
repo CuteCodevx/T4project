@@ -28,6 +28,8 @@ router.post('/',function (req,res) {
         var oldPermission = r[0].permission;
         handledata.update('judges',{'name':oldname,'password':oldpsw,'permission':oldPermission},{'name':name,'password':psw,'permission':permission})
     })
-    res.sendStatus(200);
+    handledata.fsort('teams',{'id':1},function(r){
+        res.render('A1',{"aresult":req.session.admin[0],"result":r});
+    })
 })
 module.exports=router;

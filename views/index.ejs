@@ -100,8 +100,11 @@
         </div>
         <div class="android-screen-section mdl-typography--text-center">
           <a name="screens"></a>
-          <div class="mdl-typography--display-1-color-contrast">Current Leaders</div>
+          <form id="rank" method="post" action="/index" name="rank">
+          <div class="mdl-typography--display-1-color-contrast">Fastest Teams</div>
           <div class="android-screens">
+              <%for (var i=0;i<rank.length;i++){%>
+              <%if(rank[i].name=='C1'){%>
             <div class="android-auto android-screen">
               <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
                 <thead>
@@ -111,20 +114,21 @@
                 </thead>
                 <tbody>
                 <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team1</td>
+                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].a%></td>
                   <td><i class="mdui-icon material-icons">&#xe400;</i></td>
                 </tr>
                 <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team2</td>
+                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].b%></td>
                   <td><i class="mdui-icon material-icons">&#xe401;</i></td>
                 </tr>
                 <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team3</td>
+                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].c%></td>
                   <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
                 </tr>
                 </tbody>
               </table>
-            </div>
+            </div><%}%>
+            <%if(rank[i].name=='C2'){%>
             <div class="android-auto android-screen">
               <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
                 <thead>
@@ -134,20 +138,21 @@
                 </thead>
                 <tbody>
                 <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team1</td>
+                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].a%></td>
                   <td><i class="mdui-icon material-icons">&#xe400;</i></td>
                 </tr>
                 <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team2</td>
+                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].b%></td>
                   <td><i class="mdui-icon material-icons">&#xe401;</i></td>
                 </tr>
                 <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team3</td>
+                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].c%></td>
                   <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
                 </tr>
                 </tbody>
               </table>
-            </div>
+            </div><%}%>
+            <%if(rank[i].name=='C3'){%>
             <div class="android-auto android-screen">
               <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
                 <thead>
@@ -157,43 +162,21 @@
                 </thead>
                 <tbody>
                 <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team1</td>
+                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].a%></td>
                   <td><i class="mdui-icon material-icons">&#xe400;</i></td>
                 </tr>
                 <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team2</td>
+                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].b%></td>
                   <td><i class="mdui-icon material-icons">&#xe401;</i></td>
                 </tr>
                 <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team3</td>
+                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].c%></td>
                   <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
                 </tr>
                 </tbody>
               </table>
-            </div>
-            <div class="android-auto android-screen">
-              <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
-                <thead>
-                <tr>
-                  <th class="mdl-data-table__cell--non-numeric" COLSPAN="2" style="text-align: center ">Pi Noon: The Right Stuff</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team1</td>
-                  <td><i class="mdui-icon material-icons">&#xe400;</i></td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team2</td>
-                  <td><i class="mdui-icon material-icons">&#xe401;</i></td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team3</td>
-                  <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
+            </div><%}%>
+            <%if(rank[i].name=='C5'){%>
             <div class="android-auto android-screen">
               <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
                 <thead>
@@ -203,43 +186,21 @@
                 </thead>
                 <tbody>
                 <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team1</td>
+                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].a%></td>
                   <td><i class="mdui-icon material-icons">&#xe400;</i></td>
                 </tr>
                 <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team2</td>
+                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].b%></td>
                   <td><i class="mdui-icon material-icons">&#xe401;</i></td>
                 </tr>
                 <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team3</td>
+                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].c%></td>
                   <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
                 </tr>
                 </tbody>
               </table>
-            </div>
-            <div class="android-auto android-screen">
-              <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
-                <thead>
-                <tr>
-                  <th class="mdl-data-table__cell--non-numeric" COLSPAN="2" style="text-align: center ">Spirit of Curiosity</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team1</td>
-                  <td><i class="mdui-icon material-icons">&#xe400;</i></td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team2</td>
-                  <td><i class="mdui-icon material-icons">&#xe401;</i></td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team3</td>
-                  <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
+            </div><%}%>
+            <%if(rank[i].name=='C7'){%>
             <div class="android-auto android-screen">
               <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
                 <thead>
@@ -249,21 +210,24 @@
                 </thead>
                 <tbody>
                 <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team1</td>
+                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].a%></td>
                   <td><i class="mdui-icon material-icons">&#xe400;</i></td>
                 </tr>
                 <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team2</td>
+                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].b%></td>
                   <td><i class="mdui-icon material-icons">&#xe401;</i></td>
                 </tr>
                 <tr>
-                  <td class="mdl-data-table__cell--non-numeric">Team3</td>
+                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].c%></td>
                   <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
                 </tr>
                 </tbody>
               </table>
-            </div>
+            </div><%}%>
+              <%}%>
           </div>
+            <button type="submit" id="refresh">Refresh</button>
+          </form>
         </div>
         <div class="android-more-section">
           <div class="android-section-title mdl-typography--display-1-color-contrast">More from Pi Wars</div>

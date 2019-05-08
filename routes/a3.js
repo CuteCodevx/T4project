@@ -22,7 +22,9 @@ router.post('/',function (req,res) {
         var email = req.body.eMail;
         var number = req.body.phoneNumber;
         handledata.insert('teams',{'name':name,'manager':manager,'email':email,'phone_number':number});
-        res.sendStatus(200);
+        handledata.fsort('teams',{'id':1},function(r){
+            res.render('A1',{"aresult":req.session.admin[0],"result":r});
+        })
     }
 
 })

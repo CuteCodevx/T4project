@@ -5,7 +5,9 @@ var handledata=require('../service/HandleData');
 router.get('/', function(req, res, next) {
     req.session.judge=null;
     req.session.admin=null;
-    res.render('index',{"err":1});
+    handledata.search('dynamic',{},function (err,r) {
+        res.render('index',{"err":1,"rank":r});
+    });
 });
 router.post('/', function(req, res, next) {
     var condition={"name":req.body.username,"password":req.body.password};

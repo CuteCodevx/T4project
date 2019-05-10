@@ -9,7 +9,7 @@
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Schedule</title>
+    <title>Final Score</title>
     <link rel="icon" href="/images/title-logo.png" sizes="32x32">
 </head>
 <body>
@@ -20,7 +20,7 @@
             <i class="material-icons">arrow_back</i>
         </button>
         <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title">Schedule</span>
+            <span class="mdl-layout-title">Final Score</span>
             <div class="mdl-layout-spacer"></div>
         </div>
     </header>
@@ -36,37 +36,19 @@
                         <table class="mdui-table" style="width: 100%">
                             <thead>
                             <tr>
-                                <th>Challenge</th>
-                                <th>Date</th>
-                                <th>Start Time</th>
-                                <th>End Time</th>
+                                <th>Ranking</th>
+                                <th>Team</th>
+                                <th>Final Score</th>
                             </tr>
                             </thead>
                             <tbody>
+                            <%for(var i=0;i<result.length;i++){%>
                             <tr>
-                                <td>The Hubble Telescope Nebula Challenge</td>
-                                <td>03/10/2019</td>
-                                <td>08:02</td>
-                                <td>10:03</td>
+                                <td><%- (i+1)%></td>
+                                <td><%- result[i].name%></td>
+                                <td><%- result[i].Cscore%></td>
                             </tr>
-                            <tr>
-                                <td>The Hubble Telescope Nebula Challenge</td>
-                                <td>03/10/2019</td>
-                                <td>08:02</td>
-                                <td>10:03</td>
-                            </tr>
-                            <tr>
-                                <td>The Hubble Telescope Nebula Challenge</td>
-                                <td>03/10/2019</td>
-                                <td>08:02</td>
-                                <td>10:03</td>
-                            </tr>
-                            <tr>
-                                <td>The Hubble Telescope Nebula Challenge</td>
-                                <td>03/10/2019</td>
-                                <td>08:02</td>
-                                <td>10:03</td>
-                            </tr>
+                            <%}%>
                             </tbody>
                         </table>
                     </div>
@@ -76,7 +58,7 @@
 
         </div>
     </main>
-    <footer class="mdl-mini-footer" >
+    <footer class="mdl-mini-footer">
         <div class="mdl-mini-footer__left-section">
             <div class="mdl-logo"><a href="/privacy">Privacy & Terms</a></div>
         </div>

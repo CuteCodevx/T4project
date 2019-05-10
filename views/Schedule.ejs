@@ -9,7 +9,7 @@
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Final Score</title>
+    <title>Schedule</title>
     <link rel="icon" href="/images/title-logo.png" sizes="32x32">
 </head>
 <body>
@@ -20,7 +20,7 @@
             <i class="material-icons">arrow_back</i>
         </button>
         <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title">Final Score</span>
+            <span class="mdl-layout-title">Schedule</span>
             <div class="mdl-layout-spacer"></div>
         </div>
     </header>
@@ -36,22 +36,21 @@
                         <table class="mdui-table" style="width: 100%">
                             <thead>
                             <tr>
-                                <th>Ranking</th>
-                                <th>Team</th>
-                                <th>Final Score</th>
+                                <th>Challenge</th>
+                                <th>Date</th>
+                                <th>Start Time</th>
+                                <th>End Time</th>
                             </tr>
                             </thead>
                             <tbody>
+                            <% for(var i = 0;i < 7;i++){ %>
                             <tr>
-                                <td>1</td>
-                                <td>team2</td>
-                                <td>3323</td>
+                                <td><%- cresult.name[i] %></td>
+                                <td><%- cresult.date[i] %></td>
+                                <td><%- cresult.start[i] %></td>
+                                <td><%- cresult.end[i] %></td>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>team2</td>
-                                <td>3323</td>
-                            </tr>
+                            <% } %>
                             </tbody>
                         </table>
                     </div>
@@ -61,7 +60,7 @@
 
         </div>
     </main>
-    <footer class="mdl-mini-footer">
+    <footer class="mdl-mini-footer" >
         <div class="mdl-mini-footer__left-section">
             <div class="mdl-logo"><a href="/privacy">Privacy & Terms</a></div>
         </div>

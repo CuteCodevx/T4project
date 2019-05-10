@@ -5,8 +5,17 @@ var handledata=require('../service/HandleData');
 router.get('/', function(req, res, next) {
     req.session.judge=null;
     req.session.admin=null;
-    handledata.search('dynamic',{},function (err,r) {
-        res.render('index',{"err":1,"rank":r});
+    handledata.search('challenges',{},function (err,rr) {
+        var end=true;
+        for(var i=0;i<rr.length;i++){
+            if(rr[i].status===1){
+                end=false;
+                break;
+            }
+        }
+        handledata.search('dynamic',{},function (err,r) {
+            res.render('index',{"err":1,"rank":r,"end":end});
+        });
     });
 });
 router.post('/', function(req, res, next) {

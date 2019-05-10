@@ -67,8 +67,12 @@
           <!-- Navigation -->
           <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">SCHEDULE</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">FINAL SCORE</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/schedule">SCHEDULE</a>
+              <%if(end===true){%>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/final">FINAL SCORE</a>
+              <%}else{%>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase">Challenges not finished!</a>
+              <%}%>
               <a class="mdl-navigation__link mdl-typography--text-uppercase"  mdui-dialog="{target: '#loginDialog'}" >LOGIN</a>
             </nav>
           </div>

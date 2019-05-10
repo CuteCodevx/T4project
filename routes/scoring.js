@@ -84,8 +84,8 @@ var scoring={
         handledata.search('teams',{},function (err,r) {
             var score;
             for(var i=0;i<r.length;i++){
-                score=r[i].C1score+r[i].C2score+r[i].C3score+r[i].C4score+r[i].C5score+r[i].C6score+r[i].C7score;
-                handledata.update('teams',{"name":result[i].name},{"Cscore":score});
+                score=Number(r[i].C1score)+Number(r[i].C2score)+Number(r[i].C3score)+Number(r[i].C4score)+Number(r[i].C5score)+Number(r[i].C6score)+Number(r[i].C7score);
+                handledata.update('teams',{"name":r[i].name},{"Cscore":score});
             }
         })
     }

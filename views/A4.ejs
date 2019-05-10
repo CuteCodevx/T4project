@@ -24,12 +24,14 @@
             <div class="mdl-layout-spacer"></div>
             <!--navigation bar-->
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href=""><i class="material-icons">account_circle</i> <%-aresult.name%> </a>
-                <a class="mdl-navigation__link" href="/login"><i class="material-icons">power_settings_new</i> Sign out </a>
+                <a class="mdl-navigation__link" href=""><i class="material-icons">account_circle</i> <%- aresult.name %>
+                </a>
+                <a class="mdl-navigation__link" href="/login"><i class="material-icons">power_settings_new</i> Sign out
+                </a>
             </nav>
         </div>
         <!-- Tabs -->
-        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-layout--large-screen-only">
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
             <a href="../A1" class="mdl-layout__tab">team management</a>
             <a href="../A2" class="mdl-layout__tab">judge management</a>
             <a href="../A3" class="mdl-layout__tab">administrator management</a>
@@ -39,11 +41,11 @@
     <!--drawer-->
 
     <main class="mdl-layout__content">
-            <input type="hidden" name="adminNum" value="4">
-            <section class="mdl-layout__tab-panel is-active" id="scroll-tab-4">
-                <div class="page-content">
-                    <form id="stopChallengeForm">
-                        <div class="mdl-grid">
+        <input type="hidden" name="adminNum" value="4">
+        <section class="mdl-layout__tab-panel is-active" id="scroll-tab-4">
+            <div class="page-content">
+                <form id="stopChallengeForm">
+                    <div class="mdl-grid">
                         <div class="mdl-layout-spacer"></div>
                         <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--4-col">
                             <div class="mdl-card__title">
@@ -53,29 +55,32 @@
                                 <table style="width: 100%">
                                     <tr>
                                         <td style="width: 100%; text-align: center">
-                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                                                 style="width: 100%;">
                                                 <select class="mdl-textfield__input" id="challengeName" name="name">
-                                                    <%for(var i=0;i<cresult.name.length;i++){%>
-                                                    <option><%-cresult.name[i]%></option>
-                                                    <%}%>
+                                                    <% for(var i = 0;i < cresult.name.length;i++){ %>
+                                                    <option><%- cresult.name[i] %></option>
+                                                    <% } %>
                                                 </select>
-                                                <label class="mdl-textfield__label" for="challengeName">Challenge</label>
+                                                <label class="mdl-textfield__label"
+                                                       for="challengeName">Challenge</label>
                                             </div>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                             <div class="mdl-card__actions mdl-card--border">
-                                <button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                <button type="submit"
+                                        class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                     Stop
                                 </button>
                             </div>
                         </div>
                         <div class="mdl-layout-spacer"></div>
                     </div>
-                    </form>
-                    <form id="challengeTimetableForm">
-                        <div class="mdl-grid">
+                </form>
+                <form id="challengeTimetableForm">
+                    <div class="mdl-grid">
                         <div class="mdl-layout-spacer"></div>
                         <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--8-col">
                             <div class="mdl-card__title">
@@ -84,43 +89,44 @@
                             <div class="mdl-card__supporting-text scrollable">
                                 <div class="mdui-table-fluid">
                                     <table class="mdui-table" style="width: 100%">
-                                    <thead>
-                                    <tr>
-                                        <th>Challenge</th>
-                                        <th>Date</th>
-                                        <th>Start Time</th>
-                                        <th>End Time</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <%for(var i=0;i<7;i++){%>
-                                    <tr>
-                                        <td><%-cresult.name[i]%></td>
-                                        <td><input type="date" name="date" value=<%-cresult.date[i]%>></td>
-                                        <td><input type="time" name="start" value=<%-cresult.start[i]%>></td>
-                                        <td><input type="time" name="end" value=<%-cresult.end[i]%>></td>
-                                    </tr>
-                                    <%}%>
-                                    </tbody>
-                                </table>
+                                        <thead>
+                                        <tr>
+                                            <th>Challenge</th>
+                                            <th>Date</th>
+                                            <th>Start Time</th>
+                                            <th>End Time</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <% for(var i = 0;i < 7;i++){ %>
+                                        <tr>
+                                            <td><%- cresult.name[i] %></td>
+                                            <td><input type="date" name="date" value=<%- cresult.date[i] %>></td>
+                                            <td><input type="time" name="start" value=<%- cresult.start[i] %>></td>
+                                            <td><input type="time" name="end" value=<%- cresult.end[i] %>></td>
+                                        </tr>
+                                        <% } %>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="mdl-card__actions mdl-card--border">
-                                <button type="submit" class="mdl-button mdl-button&#45;&#45;colored mdl-js-button mdl-js-ripple-effect">
+                                <button type="submit"
+                                        class="mdl-button mdl-button&#45;&#45;colored mdl-js-button mdl-js-ripple-effect">
                                     Confirm
                                 </button>
                             </div>
                         </div>
                         <div class="mdl-layout-spacer"></div>
                     </div>
-                    </form>
+                </form>
 
-                    <!-- judge management goes here -->
-                    <!-- judge management goes here -->
-                    <!-- judge management goes here -->
+                <!-- judge management goes here -->
+                <!-- judge management goes here -->
+                <!-- judge management goes here -->
 
-                </div>
-            </section>
+            </div>
+        </section>
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">
                 <div class="mdl-logo"><a href="/privacy">Privacy & Terms</a></div>

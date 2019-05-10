@@ -15,21 +15,23 @@
 <body>
 <!-- Simple header with scrollable tabs. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
-<header class="mdl-layout__header">
+    <header class="mdl-layout__header">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <div class="mdl-layout__header-row">
             <!-- Title -->
             <span class="mdl-layout-title mdl-cell--hide-phone">JUDGE</span>
-<div class="mdl-layout-spacer"></div>
+            <div class="mdl-layout-spacer"></div>
             <!--navigation bar-->
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href=""><i class="material-icons">account_circle</i> <%-jresult.name%> </a>
-                <a class="mdl-navigation__link" href="/login"><i class="material-icons">power_settings_new</i> Sign out </a>
+                <a class="mdl-navigation__link" href=""><i class="material-icons">account_circle</i> <%- jresult.name %>
+                </a>
+                <a class="mdl-navigation__link" href="/login"><i class="material-icons">power_settings_new</i> Sign out
+                </a>
             </nav>
         </div>
         <!-- Tabs -->
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-layout--large-screen-only">
-<a href="../C1" class="mdl-layout__tab">The Hubble Telescope Nebula Challenge</a>
+            <a href="../C1" class="mdl-layout__tab">The Hubble Telescope Nebula Challenge</a>
             <a href="../C2" class="mdl-layout__tab">The Canyons of Mars</a>
             <a href="../C3" class="mdl-layout__tab">Blast Off: the Straight-ish Line Speed Test</a>
             <a href="../C4" class="mdl-layout__tab">Pi Noon: The Right Stuff</a>
@@ -51,9 +53,9 @@
             <a class="mdl-navigation__link" href="../C5">Space Invaders</a>
             <a class="mdl-navigation__link" href="../C6">Spirit of Curiosity</a>
             <a class="mdl-navigation__link" href="../C7">The Apollo 13 Obstacle Course</a>
-            <%if(jresult.permission==2){%>
-            <a class="mdl-navigation__link" href="../C8">Technical Marking</a>
-            <%}%>
+            <% if(jresult.permission == 2){ %>
+                <a class="mdl-navigation__link" href="../C8">Technical Marking</a>
+            <% } %>
         </nav>
     </div>
     <main class="mdl-layout__content">
@@ -73,9 +75,9 @@
                                 <div class="mdl-card__supporting-text scrollable">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                         <select class="mdl-textfield__input" id="team" name="team">
-                                            <%for(var i=0;i<tresult.length;i++){%>
-                                            <option value=<%-tresult[i].name%>><%-tresult[i].name%></option>
-                                            <%}%>
+                                            <% for(var i = 0;i < tresult.length;i++){ %>
+                                            <option value=<%- tresult[i].name %>><%- tresult[i].name %></option>
+                                            <% } %>
                                         </select>
                                         <label class="mdl-textfield__label" for="team">Team</label>
                                     </div>
@@ -89,9 +91,11 @@
                                 <div class="mdl-card__title">
                                     <h1 class="mdl-card__title-text">Blogging Points</h1>
                                 </div>
-                                <div class="mdl-card__supporting-text scrollable" >
+                                <div class="mdl-card__supporting-text scrollable">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <label for="sec"></label><input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="bloggingPoints" name="bloggingPoints">
+                                        <label for="sec"></label><input class="mdl-textfield__input" type="number"
+                                                                        pattern="-?[0-9]*(\.[0-9]+)?"
+                                                                        id="bloggingPoints" name="bloggingPoints">
                                         <label class="mdl-textfield__label" for="bloggingPoints">Blogging Points</label>
                                         <span class="mdl-textfield__error">Input is not a number!</span>
                                     </div>
@@ -105,9 +109,11 @@
                                 <div class="mdl-card__title">
                                     <h1 class="mdl-card__title-text">Technical Merit</h1>
                                 </div>
-                                <div class="mdl-card__supporting-text scrollable" >
+                                <div class="mdl-card__supporting-text scrollable">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <label for="sec"></label><input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="technicalMerit" name="technicalMerit">
+                                        <label for="sec"></label><input class="mdl-textfield__input" type="number"
+                                                                        pattern="-?[0-9]*(\.[0-9]+)?"
+                                                                        id="technicalMerit" name="technicalMerit">
                                         <label class="mdl-textfield__label" for="technicalMerit">Technical Merit</label>
                                         <span class="mdl-textfield__error">Input is not a number!</span>
                                     </div>
@@ -121,10 +127,12 @@
                                 <div class="mdl-card__title">
                                     <h1 class="mdl-card__title-text">Artistic Merit</h1>
                                 </div>
-                                <div class="mdl-card__supporting-text scrollable" >
+                                <div class="mdl-card__supporting-text scrollable">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <label for="sec"></label><input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="artisticMerit" name="artisticMerit">
-                                        <label class="mdl-textfield__label" for="artisticMerit">Artistic  Merit</label>
+                                        <label for="sec"></label><input class="mdl-textfield__input" type="number"
+                                                                        pattern="-?[0-9]*(\.[0-9]+)?" id="artisticMerit"
+                                                                        name="artisticMerit">
+                                        <label class="mdl-textfield__label" for="artisticMerit">Artistic Merit</label>
                                         <span class="mdl-textfield__error">Input is not a number!</span>
                                     </div>
                                 </div>
@@ -135,7 +143,8 @@
                             <div class="mdl-layout-spacer"></div>
                             <div class="mdl-cell mdl-cell&#45;&#45;12-col send-button" align="center">
                                 <!-- Accent-colored raised button with ripple -->
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width: 140px; min-width: initial" type="submit">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                                        style="width: 140px; min-width: initial" type="submit">
                                     submit
                                 </button>
                             </div>
@@ -145,10 +154,10 @@
                 </div>
             </form>
         </section>
-            <footer class="mdl-mini-footer">
+        <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">
                 <div class="mdl-logo"><a href="/privacy">Privacy & Terms</a></div>
-</div>
+            </div>
         </footer>
     </main>
 </div>

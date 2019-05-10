@@ -39,6 +39,23 @@
   </head>
   <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<!--      <div class="android-header mdl-layout__header mdl-layout__header&#45;&#45;waterfall">-->
+<!--        <div class="mdl-layout__header-row">-->
+<!--          <span class="android-title mdl-layout-title">-->
+<!--            <img class="android-logo-image" src="images/pi-war-logo-white.png">-->
+<!--          </span>-->
+<!--          &lt;!&ndash; Add spacer, to align navigation to the right in desktop &ndash;&gt;-->
+<!--          <div class="android-header-spacer mdl-layout-spacer"></div>-->
+<!--          &lt;!&ndash; Navigation &ndash;&gt;-->
+<!--          <span class="android-mobile-title mdl-layout-title">-->
+<!--            <img class="android-logo-image" src="images/pi-war-logo-white.png">-->
+<!--          </span>-->
+<!--          <button class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-js-ripple-effect mdl-button&#45;&#45;accent" mdui-dialog="{target: '#loginDialog'}">-->
+<!--            STUFF LOGIN-->
+<!--          </button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      -->
 
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
@@ -48,15 +65,29 @@
           <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
           <!-- Navigation -->
-
+          <div class="android-navigation-container">
+            <nav class="android-navigation mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">SCHEDULE</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">FINAL SCORE</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase"  mdui-dialog="{target: '#loginDialog'}" >LOGIN</a>
+            </nav>
+          </div>
           <span class="android-mobile-title mdl-layout-title">
             <img class="android-logo-image" src="images/pi-war-logo-white.png">
           </span>
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" mdui-dialog="{target: '#loginDialog'}">
-            STUFF LOGIN
-          </button>
         </div>
       </div>
+
+<!--      drawer-->
+      <div class="android-drawer mdl-layout__drawer">
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" mdui-dialog="{target: '#loginDialog'}" >LOGIN</a>
+          <div class="android-drawer-separator"></div>
+          <a class="mdl-navigation__link" href="">SCHEDULE</a>
+          <a class="mdl-navigation__link" href="">FINAL SCORE</a>
+        </nav>
+      </div>
+<!--      login dialog-->
       <form name="login" method="post" action="/login" id="login">
         <div class="mdui-dialog" id="loginDialog" style="width: 300px;">
             <div class="mdui-dialog-title">STUFF LOGIN</div>
@@ -88,10 +119,6 @@
       <div class="android-content mdl-layout__content">
         <a name="top"></a>
         <div class="android-be-together-section mdl-typography--text-center">
-          <div class="logo-font android-slogan"></div>
-          <div class="logo-font android-sub-slogan"></div>
-          <div class="logo-font android-create-character"></div>
-
           <a href="#screens">
             <button class="android-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
               <i class="material-icons">expand_more</i>
@@ -226,7 +253,12 @@
             </div><%}%>
               <%}%>
           </div>
-            <button type="submit" id="refresh">Refresh</button>
+<!--            <button type="submit" id="refresh">Refresh</button>-->
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="refresh" type="submit">
+              <i class="material-icons">
+                refresh
+              </i>Refresh
+            </button>
           </form>
         </div>
         <div class="android-more-section">

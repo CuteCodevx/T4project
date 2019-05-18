@@ -17,7 +17,7 @@
 -->
 
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
@@ -26,7 +26,8 @@
     <link rel="icon" href="/images/title-logo.png" sizes="32x32">
 
     <!-- Page styles -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">
     <link rel="stylesheet" href="/stylesheets/home.css">
@@ -36,76 +37,63 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/mdui/0.4.2/js/mdui.min.js"></script>
     <script type="text/javascript" src="/jquery/dist/jquery.js"></script>
     <script src="/javascripts/getFormData.js"></script>
-  </head>
-  <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-<!--      <div class="android-header mdl-layout__header mdl-layout__header&#45;&#45;waterfall">-->
-<!--        <div class="mdl-layout__header-row">-->
-<!--          <span class="android-title mdl-layout-title">-->
-<!--            <img class="android-logo-image" src="images/pi-war-logo-white.png">-->
-<!--          </span>-->
-<!--          &lt;!&ndash; Add spacer, to align navigation to the right in desktop &ndash;&gt;-->
-<!--          <div class="android-header-spacer mdl-layout-spacer"></div>-->
-<!--          &lt;!&ndash; Navigation &ndash;&gt;-->
-<!--          <span class="android-mobile-title mdl-layout-title">-->
-<!--            <img class="android-logo-image" src="images/pi-war-logo-white.png">-->
-<!--          </span>-->
-<!--          <button class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-js-ripple-effect mdl-button&#45;&#45;accent" mdui-dialog="{target: '#loginDialog'}">-->
-<!--            STUFF LOGIN-->
-<!--          </button>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      -->
-
-      <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="android-title mdl-layout-title">
             <img class="android-logo-image" src="images/pi-war-logo-white.png">
           </span>
-          <!-- Add spacer, to align navigation to the right in desktop -->
-          <div class="android-header-spacer mdl-layout-spacer"></div>
-          <!-- Navigation -->
-          <div class="android-navigation-container">
-            <nav class="android-navigation mdl-navigation">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/schedule">SCHEDULE</a>
-              <%if(end===true){%>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/final">FINAL SCORE</a>
-              <%}else{%>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase">Challenges not finished!</a>
-              <%}%>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase"  mdui-dialog="{target: '#loginDialog'}" >LOGIN</a>
-            </nav>
-          </div>
-          <span class="android-mobile-title mdl-layout-title">
+            <!-- Add spacer, to align navigation to the right in desktop -->
+            <div class="android-header-spacer mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            <div class="android-navigation-container">
+                <nav class="android-navigation mdl-navigation">
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/schedule">SCHEDULE</a>
+                    <% if(end === true){ %>
+                        <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/final">FINAL SCORE</a>
+                    <% }else{ %>
+                        <a class="mdl-navigation__link mdl-typography--text-uppercase">CHALLENGES NOT FINISHED</a>
+                    <% } %>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase"
+                       mdui-dialog="{target: '#loginDialog'}">LOGIN</a>
+                </nav>
+            </div>
+            <span class="android-mobile-title mdl-layout-title">
             <img class="android-logo-image" src="images/pi-war-logo-white.png">
           </span>
         </div>
-      </div>
+    </div>
 
-<!--      drawer-->
-      <div class="android-drawer mdl-layout__drawer">
+    <!--      drawer-->
+    <div class="android-drawer mdl-layout__drawer">
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" mdui-dialog="{target: '#loginDialog'}" >LOGIN</a>
-          <div class="android-drawer-separator"></div>
-          <a class="mdl-navigation__link" href="">SCHEDULE</a>
-          <a class="mdl-navigation__link" href="">FINAL SCORE</a>
+            <a class="mdl-navigation__link" mdui-dialog="{target: '#loginDialog'}">LOGIN</a>
+            <div class="android-drawer-separator"></div>
+            <a class="mdl-navigation__link" href="/schedule">SCHEDULE</a>
+            <% if(end === true){ %>
+                <a class="mdl-navigation__link" href="/final">FINAL SCORE</a>
+            <% }else{ %>
+                <a class="mdl-navigation__link">CHALLENGES NOT FINISHED</a>
+            <% } %>
         </nav>
-      </div>
-<!--      login dialog-->
-      <form name="login" method="post" action="/login" id="login">
+    </div>
+    <!--      login dialog-->
+    <form name="login" method="post" action="/login" id="login">
         <div class="mdui-dialog" id="loginDialog" style="width: 300px;">
             <div class="mdui-dialog-title">STUFF LOGIN</div>
-            <div class="mdui-dialog-content" >
+            <div class="mdui-dialog-content">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="username" required>
-                <label class="mdl-textfield__label" for="username">username</label>
+                    <input class="mdl-textfield__input" type="text" id="username" required>
+                    <label class="mdl-textfield__label" for="username">username</label>
                 </div>
                 <br>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="password" id="password" required>
-                <label class="mdl-textfield__label" for="password">password</label>
+                    <input class="mdl-textfield__input" type="password" id="password" required>
+                    <label class="mdl-textfield__label" for="password">password</label>
                 </div>
-            <br>
+                <br>
                 <div id="invalidAlert" style="display: none;">
                     <p style="color: red">
                         Invalid username or password!
@@ -113,231 +101,252 @@
                 </div>
             </div>
             <div class="mdui-dialog-actions">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
-                login
-            </button>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                        type="submit">
+                    login
+                </button>
             </div>
         </div>
-      </form>
+    </form>
 
-      <div class="android-content mdl-layout__content">
+    <div class="android-content mdl-layout__content">
         <a name="top"></a>
         <div class="android-be-together-section mdl-typography--text-center">
-          <a href="#screens">
-            <button class="android-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-              <i class="material-icons">expand_more</i>
-            </button>
-          </a>
+            <a href="#screens">
+                <button class="android-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+                    <i class="material-icons">expand_more</i>
+                </button>
+            </a>
         </div>
         <div class="android-screen-section mdl-typography--text-center">
-          <a name="screens"></a>
-          <form id="rank" method="post" action="/index" name="rank">
-          <div class="mdl-typography--display-1-color-contrast">Fastest Teams</div>
-          <div class="android-screens">
-              <%for (var i=0;i<rank.length;i++){%>
-              <%if(rank[i].name=='C1'){%>
-            <div class="android-auto android-screen">
-              <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
-                <thead>
-                <tr>
-                  <th class="mdl-data-table__cell--non-numeric" COLSPAN="2" style="text-align: center ">The Hubble Telescope Nebula Challenge</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].a%></td>
-                  <td><i class="mdui-icon material-icons">&#xe400;</i></td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].b%></td>
-                  <td><i class="mdui-icon material-icons">&#xe401;</i></td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].c%></td>
-                  <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
-                </tr>
-                </tbody>
-              </table>
-            </div><%}%>
-            <%if(rank[i].name=='C2'){%>
-            <div class="android-auto android-screen">
-              <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
-                <thead>
-                <tr>
-                  <th class="mdl-data-table__cell--non-numeric" COLSPAN="2" style="text-align: center ">The Canyons of Mars</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].a%></td>
-                  <td><i class="mdui-icon material-icons">&#xe400;</i></td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].b%></td>
-                  <td><i class="mdui-icon material-icons">&#xe401;</i></td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].c%></td>
-                  <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
-                </tr>
-                </tbody>
-              </table>
-            </div><%}%>
-            <%if(rank[i].name=='C3'){%>
-            <div class="android-auto android-screen">
-              <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
-                <thead>
-                <tr>
-                  <th class="mdl-data-table__cell--non-numeric" COLSPAN="2" style="text-align: center ">Blast Off: the Straight-ish Line Speed Test</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].a%></td>
-                  <td><i class="mdui-icon material-icons">&#xe400;</i></td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].b%></td>
-                  <td><i class="mdui-icon material-icons">&#xe401;</i></td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].c%></td>
-                  <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
-                </tr>
-                </tbody>
-              </table>
-            </div><%}%>
-            <%if(rank[i].name=='C5'){%>
-            <div class="android-auto android-screen">
-              <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
-                <thead>
-                <tr>
-                  <th class="mdl-data-table__cell--non-numeric" COLSPAN="2" style="text-align: center ">Space Invaders</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].a%></td>
-                  <td><i class="mdui-icon material-icons">&#xe400;</i></td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].b%></td>
-                  <td><i class="mdui-icon material-icons">&#xe401;</i></td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].c%></td>
-                  <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
-                </tr>
-                </tbody>
-              </table>
-            </div><%}%>
-            <%if(rank[i].name=='C7'){%>
-            <div class="android-auto android-screen">
-              <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
-                <thead>
-                <tr>
-                  <th class="mdl-data-table__cell--non-numeric" COLSPAN="2" style="text-align: center ">The Apollo 13 Obstacle Course</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].a%></td>
-                  <td><i class="mdui-icon material-icons">&#xe400;</i></td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].b%></td>
-                  <td><i class="mdui-icon material-icons">&#xe401;</i></td>
-                </tr>
-                <tr>
-                  <td class="mdl-data-table__cell--non-numeric"><%-rank[i].c%></td>
-                  <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
-                </tr>
-                </tbody>
-              </table>
-            </div><%}%>
-              <%}%>
-          </div>
-<!--            <button type="submit" id="refresh">Refresh</button>-->
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="refresh" type="submit">
-              <i class="material-icons">
-                refresh
-              </i>Refresh
-            </button>
-          </form>
+            <a name="screens"></a>
+            <form id="rank" method="post" action="/index" name="rank">
+                <div class="mdl-typography--display-1-color-contrast">Fastest Teams</div>
+                <div class="android-screens">
+                    <% for (var i = 0;i < rank.length;i++){ %>
+                    <% if(rank[i].name == 'C1'){ %>
+                    <div class="android-auto android-screen">
+                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
+                            <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric" COLSPAN="2" style="text-align: center ">
+                                    The Hubble Telescope Nebula Challenge
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric"><%- rank[i].a %></td>
+                                <td><i class="mdui-icon material-icons">&#xe400;</i></td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric"><%- rank[i].b %></td>
+                                <td><i class="mdui-icon material-icons">&#xe401;</i></td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric"><%- rank[i].c %></td>
+                                <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <% } %>
+                    <% if(rank[i].name == 'C2'){ %>
+                    <div class="android-auto android-screen">
+                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
+                            <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric" COLSPAN="2" style="text-align: center ">
+                                    The Canyons of Mars
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric"><%- rank[i].a %></td>
+                                <td><i class="mdui-icon material-icons">&#xe400;</i></td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric"><%- rank[i].b %></td>
+                                <td><i class="mdui-icon material-icons">&#xe401;</i></td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric"><%- rank[i].c %></td>
+                                <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <% } %>
+                    <% if(rank[i].name == 'C3'){ %>
+                    <div class="android-auto android-screen">
+                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
+                            <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric" COLSPAN="2" style="text-align: center ">
+                                    Blast Off: the Straight-ish Line Speed Test
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric"><%- rank[i].a %></td>
+                                <td><i class="mdui-icon material-icons">&#xe400;</i></td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric"><%- rank[i].b %></td>
+                                <td><i class="mdui-icon material-icons">&#xe401;</i></td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric"><%- rank[i].c %></td>
+                                <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <% } %>
+                    <% if(rank[i].name == 'C5'){ %>
+                    <div class="android-auto android-screen">
+                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
+                            <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric" COLSPAN="2" style="text-align: center ">
+                                    Space Invaders
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric"><%- rank[i].a %></td>
+                                <td><i class="mdui-icon material-icons">&#xe400;</i></td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric"><%- rank[i].b %></td>
+                                <td><i class="mdui-icon material-icons">&#xe401;</i></td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric"><%- rank[i].c %></td>
+                                <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <% } %>
+                    <% if(rank[i].name == 'C7'){ %>
+                    <div class="android-auto android-screen">
+                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
+                            <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric" COLSPAN="2" style="text-align: center ">
+                                    The Apollo 13 Obstacle Course
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric"><%- rank[i].a %></td>
+                                <td><i class="mdui-icon material-icons">&#xe400;</i></td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric"><%- rank[i].b %></td>
+                                <td><i class="mdui-icon material-icons">&#xe401;</i></td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric"><%- rank[i].c %></td>
+                                <td><i class="mdui-icon material-icons">&#xe3fb;</i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <% } %>
+                    <% } %>
+                </div>
+                <!--            <button type="submit" id="refresh">Refresh</button>-->
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                        id="refresh" type="submit">
+                    <i class="material-icons">
+                        refresh
+                    </i>Refresh
+                </button>
+            </form>
         </div>
         <div class="android-more-section">
-          <div class="android-section-title mdl-typography--display-1-color-contrast">More from Pi Wars</div>
-          <div class="android-card-container mdl-grid">
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">Pi Wars</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">The Raspberry Pi robotics challenge competition</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://piwars.org/">
-                   GO
-                   <i class="material-icons">chevron_right</i>
-                 </a>
-              </div>
-            </div>
+            <div class="android-section-title mdl-typography--display-1-color-contrast">More from Pi Wars</div>
+            <div class="android-card-container mdl-grid">
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                    <div class="mdl-card__title">
+                        <h4 class="mdl-card__title-text">Pi Wars</h4>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <span class="mdl-typography--font-light mdl-typography--subhead">The Raspberry Pi robotics challenge competition</span>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase"
+                           href="https://piwars.org/">
+                            GO
+                            <i class="material-icons">chevron_right</i>
+                        </a>
+                    </div>
+                </div>
 
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">General Rules</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Please read these rules thoroughly.</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://piwars.org/2019-competition/general-rules/">
-                   GO
-                   <i class="material-icons">chevron_right</i>
-                 </a>
-              </div>
-            </div>
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                    <div class="mdl-card__title">
+                        <h4 class="mdl-card__title-text">General Rules</h4>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <span class="mdl-typography--font-light mdl-typography--subhead">Please read these rules thoroughly.</span>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase"
+                           href="https://piwars.org/2019-competition/general-rules/">
+                            GO
+                            <i class="material-icons">chevron_right</i>
+                        </a>
+                    </div>
+                </div>
 
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">The Challenges</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">The space-themed challenges for the 2019 competition. Rules will be updated if clarification is required.</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://piwars.org/2019-competition/challenges/">
-                   GO
-                   <i class="material-icons">chevron_right</i>
-                 </a>
-              </div>
-            </div>
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                    <div class="mdl-card__title">
+                        <h4 class="mdl-card__title-text">The Challenges</h4>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <span class="mdl-typography--font-light mdl-typography--subhead">The space-themed challenges for the 2019 competition. Rules will be updated if clarification is required.</span>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase"
+                           href="https://piwars.org/2019-competition/challenges/">
+                            GO
+                            <i class="material-icons">chevron_right</i>
+                        </a>
+                    </div>
+                </div>
 
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">Discussion Forums</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">The official Forum of Pi-Wars.</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://piwars.org/forums/">
-                   GO
-                   <i class="material-icons">chevron_right</i>
-                 </a>
-              </div>
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                    <div class="mdl-card__title">
+                        <h4 class="mdl-card__title-text">Discussion Forums</h4>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <span class="mdl-typography--font-light mdl-typography--subhead">The official Forum of Pi-Wars.</span>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase"
+                           href="https://piwars.org/forums/">
+                            GO
+                            <i class="material-icons">chevron_right</i>
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
         <!--login dialog-->
 
 
         <footer class="android-footer mdl-mega-footer">
-          <div class="mdl-mega-footer--bottom-section">
-            <a class="android-link mdl-typography--font-light" href="/privacy">Privacy Policy</a>
-          </div>
+            <div class="mdl-mega-footer--bottom-section">
+                <a class="android-link mdl-typography--font-light" href="/privacy">Privacy Policy</a>
+            </div>
         </footer>
-      </div>
     </div>
-  </body>
+</div>
+</body>
 </html>

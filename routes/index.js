@@ -4,8 +4,7 @@ var handledata=require('../service/HandleData');
 var dynamic=require('../service/dynamic');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    req.session.judge=null;
-    req.session.admin=null;
+    // check challenges status, if all are finished, set end false
     handledata.search('challenges',{},function (err,rr) {
         var end=true;
         for(var i=0;i<rr.length;i++){
@@ -14,13 +13,16 @@ router.get('/', function(req, res, next) {
                 break;
             }
         }
+        // show dynamic fastest teams list
         handledata.search('dynamic',{},function (err,r) {
             res.render('index',{"err":1,"rank":r,"end":end});
         });
     });
 });
 router.post('/',function (req,res) {
+    // sort teams' time for each attempt
     dynamic.rank();
+    // show result again
     handledata.search('challenges',{},function (err,rr) {
         var end=true;
         for(var i=0;i<rr.length;i++){

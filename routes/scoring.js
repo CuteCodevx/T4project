@@ -1,9 +1,13 @@
 var handledata = require('../service/HandleData');
 
+// package functions inside for convenience
 var scoring={
+    // find minmum time (if measured by time)
     min:function () {
     handledata.search("teams",{},function (err,result) {
+        // go through all teams, find min time for each challenge measured by time
         for(var i=0;i<result.length;i++){
+            // if this team's time for this attempt is empty, means invalid attempt. Thus, make it the maximum time
             var C1min=Math.min((result[i].C1_1_time!='')?result[i].C1_1_time:450,(result[i].C1_2_time!='')?result[i].C1_2_time:450,(result[i].C1_3_time!='')?result[i].C1_3_time:450);
             var C2min=Math.min((result[i].C2_1_time!='')?result[i].C2_1_time:450,(result[i].C2_2_time!='')?result[i].C2_2_time:450,(result[i].C2_3_time!='')?result[i].C2_3_time:450);
             if(result[i].C3_1_time!=''&& result[i].C3_2_time!=''&& result[i].C3_3_time!='')
@@ -11,8 +15,9 @@ var scoring={
             else
                 var C3min=940;
 
-            var C5min=Math.min((result[i].C1_1_time!='')?result[i].C1_1_time:600,(result[i].C1_2_time!='')?result[i].C1_2_time:600,(result[i].C1_3_time!='')?result[i].C1_3_time:600);
-            var C7min=Math.min((result[i].C1_1_time!='')?result[i].C1_1_time:660,(result[i].C1_2_time!='')?result[i].C1_2_time:660,(result[i].C1_3_time!='')?result[i].C1_3_time:660);
+            var C5min=Math.min((result[i].C5_1_time!='')?result[i].C5_1_time:600,(result[i].C5_2_time!='')?result[i].C5_2_time:600,(result[i].C5_3_time!='')?result[i].C5_3_time:600);
+            var C7min=Math.min((result[i].C7_1_time!='')?result[i].C7_1_time:660,(result[i].C7_2_time!='')?result[i].C7_2_time:660,(result[i].C7_3_time!='')?result[i].C7_3_time:660);
+            // update minimum time
             handledata.update("teams",{"id":result[i].id},{
                 "C1min":C1min,
                 "C2min":C2min,
@@ -23,7 +28,9 @@ var scoring={
         }
     })
 },
+    // for each challenge,use a formula to calculate scores
     calculate:function (cNum) {
+        // each challenge has a different calculating method
         switch (cNum){
             case 1:
                 handledata.fsort("teams",{'C1min':1},function (result) {
@@ -80,6 +87,7 @@ var scoring={
                 break;
         }
     },
+    // adding scores to get final score for each team
     final: function () {
         handledata.search('teams',{},function (err,r) {
             var score;

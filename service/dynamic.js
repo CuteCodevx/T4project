@@ -1,5 +1,6 @@
 var handledata=require('../service/HandleData');
 
+// package functions inside for convenience
 var dynamic={
     rank:function(){
         handledata.search("teams",{},function (err,result) {

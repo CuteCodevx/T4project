@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var handledata = require('../service/HandleData');
-/* GET users listing. */
+/* GET adding page. */
 router.get('/', function (req, res){
+    // show admin accounts
     res.render('A3',{"aresult":req.session.admin[0]});
 })
 
@@ -17,6 +18,7 @@ router.post('/',function (req,res) {
         handledata.insert('judges',{'name':name,'password':psw,'permission':permission});
         res.sendStatus(200);
     }else{
+        // add team account
         var name = req.body.teamName;
         var manager = req.body.teamManager;
         var email = req.body.eMail;

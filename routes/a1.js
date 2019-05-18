@@ -1,24 +1,25 @@
 var express = require('express');
 var router = express.Router();
 var handledata = require('../service/HandleData');
-/* GET users listing. */
+/* GET teams listing. */
 router.get('/', function (req, res){
+    // get the query
     var data = req.query;
     if(data.team){
-       // res.render('A1',{"aresult":req.session.admin[0],"result":data});
+        // if searching the team, show info of this team
         handledata.search('teams',{'name':data.team},function(err,r){
             res.render('A1_1',{"aresult":req.session.admin[0],"result":r});
         })
     }else{
+        // otherwise, show all teams' data
         handledata.fsort('teams',{'id':1},function(r){
-        //    console.log(r);
             res.render('A1',{"aresult":req.session.admin[0],"result":r});
         })
     }
 })
 
 router.post('/',function (req,res) {
-    console.log(req.body);
+    // get values from pages
     var name =req.body.name;
     var manager = req.body.manager;
     var number = req.body.phone_number;
@@ -64,8 +65,8 @@ router.post('/',function (req,res) {
     var C7score = req.body.C7score;
     var C8score = req.body.C8score;
     var Cscore = req.body.Cscore;
-
     var oldname = req.body.oldname;
+    // update values
     handledata.search('teams',{'name':oldname},function (err,r) {
         var oldname =r[0].name;
         var oldmanager = r[0].manager;
@@ -121,7 +122,6 @@ router.post('/',function (req,res) {
         })
     })
     handledata.fsort('teams',{'id':1},function(r){
-        //    console.log(r);
         res.render('A1',{"aresult":req.session.admin[0],"result":r});
     })
 })

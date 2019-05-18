@@ -8,7 +8,7 @@ var dynamic={
             result.sort("C1min");
             var list1=[];
             for(var i=0;i<3;i++){
-                if(result[i].C1min!=""&&result[i].C1min!=450)
+                if((result[i].C1min!="")&&(result[i].C1min!=450))
                     list1.push(result[i].name);
             }
             list1.push("");list1.push("");list1.push("");  // in case less than 3 teams have the valid time
@@ -17,7 +17,7 @@ var dynamic={
             result.sort("C2min");
             var list2=[];
             for(var i=0;i<3;i++){
-                if(result[i].C2min!=""&&result[i].C2min!=450)
+                if((result[i].C2min!="")&&(result[i].C2min!=450))
                     list2.push(result[i].name);
             }
             list2.push("");list2.push("");list2.push("");
@@ -26,7 +26,7 @@ var dynamic={
             result.sort("C3min");
             var list3=["","",""];
             for(var i=0;i<3;i++){
-                if(result[i].C3min!=""&&result[i].C3min!=940)
+                if((result[i].C3min!="")&&(result[i].C3min!=940))
                     list3.push(result[i].name);
             }
             list3.push("");list3.push("");list3.push("");
@@ -35,7 +35,7 @@ var dynamic={
             result.sort("C5min");
             var list5=[];
             for(var i=0;i<3;i++){
-                if(result[i].C5min!=""&&result[i].C5min!=600)
+                if((result[i].C5min!="")&&(result[i].C5min!=600))
                     list5.push(result[i].name);
             }
             list5.push("");list5.push("");list5.push("");
@@ -44,7 +44,7 @@ var dynamic={
             result.sort("C7min");
             var list7=[];
             for(var i=0;i<3;i++){
-                if(result[i].C7min!=""&&result[i].C7min!=600)
+                if((result[i].C7min!="")&&(result[i].C7min!=600))
                     list7.push(result[i].name);
             }
             list7.push("");list7.push("");list7.push("");

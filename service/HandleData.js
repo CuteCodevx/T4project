@@ -60,7 +60,7 @@ var handledata={
             })
         })
     },
-    // findsort
+    // find & sort
     fsort:function (form,condition,callback) {
         MongoClient.connect(DBurl,function (err,db) {
             if(err){

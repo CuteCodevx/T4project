@@ -23,8 +23,10 @@
             <div class="mdl-layout-spacer"></div>
             <!--navigation bar-->
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href=""><i class="material-icons">account_circle</i> <%-aresult.name%> </a>
-                <a class="mdl-navigation__link" href="/login"><i class="material-icons">power_settings_new</i> Sign out </a>
+                <a class="mdl-navigation__link" href=""><i class="material-icons">account_circle</i> <%- aresult.name %>
+                </a>
+                <a class="mdl-navigation__link" href="/login"><i class="material-icons">power_settings_new</i> Sign out
+                </a>
             </nav>
         </div>
         <!-- Tabs -->
@@ -41,40 +43,42 @@
         <form>
             <input type="hidden" name="adminNum" value="2">
             <section class="mdl-layout__tab-panel is-active" id="scroll-tab-2">
-            <div class="page-content">
-                <!-- judge management goes here -->
-                <!-- judge management goes here -->
-                <!-- judge management goes here -->
-                <form id="A2Form1" method="get">
-                    <div class="mdl-grid">
-                        <div class="mdl-layout-spacer"></div>
-                        <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--4-col">
-                            <div class="mdl-card__title">
-                                <h1 class="mdl-card__title-text">Judge  Selection</h1>
-                            </div>
-                            <div class="mdl-card__supporting-text scrollable ">
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">
-                                    <select class="mdl-textfield__input" id="judge" name="judge">
-                                        <option></option>
-                                        <%for(var i = 0;i<result.length;i++){ %>
-                                        <option value=<%=result[i].name%>><%=result[i].name%></option>
-                                        <% } %>
-                                    </select>
-                                    <label class="mdl-textfield__label" for="team">judge</label>
+                <div class="page-content">
+                    <!-- judge management goes here -->
+                    <!-- judge management goes here -->
+                    <!-- judge management goes here -->
+                    <form id="A2Form1" method="get">
+                        <div class="mdl-grid">
+                            <div class="mdl-layout-spacer"></div>
+                            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--4-col">
+                                <div class="mdl-card__title">
+                                    <h1 class="mdl-card__title-text">Judge Selection</h1>
+                                </div>
+                                <div class="mdl-card__supporting-text scrollable ">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                                         style="width: 100%;">
+                                        <select class="mdl-textfield__input" id="judge" name="judge">
+                                            <option></option>
+                                            <% for(var i = 0;i < result.length;i++){ %>
+                                            <option value=<%= result[i].name %>><%= result[i].name %></option>
+                                            <% } %>
+                                        </select>
+                                        <label class="mdl-textfield__label" for="team">judge</label>
+                                    </div>
+                                </div>
+                                <div class="mdl-card__actions">
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                                            id="search">
+                                        search
+                                    </button>
                                 </div>
                             </div>
-                            <div class="mdl-card__actions">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="search">
-                                    search
-                                </button>
-                            </div>
+                            <div class="mdl-layout-spacer"></div>
                         </div>
-                        <div class="mdl-layout-spacer"></div>
-                    </div>
-                </form>
-                <%include A2_1.ejs%>
-            </div>
-        </section>
+                    </form>
+                    <% include A2_1.ejs %>
+                </div>
+            </section>
         </form>
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">

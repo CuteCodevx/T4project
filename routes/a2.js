@@ -3,18 +3,23 @@ var router = express.Router();
 var handledata = require('../service/HandleData');
 /* GET judges' data. */
 router.get('/', function (req, res){
-    // get values from the query
-    var data = req.query;
-    if(data.judge){
-        // if searching the judge, show this judge's info
-        handledata.search('judges',{'name':data.judge},function(err,r){
-            res.render('A2_1',{"aresult":req.session.admin[0],"result":r});
-        })
-    }else{
-        // otherwise, show all judges' info
-        handledata.fsort('judges',{'id':1},function(r){
-            res.render('A2',{"aresult":req.session.admin[0],"result":r});
-        })
+    // check session
+    if(!req.session.admin)
+        res.redirect('/');
+    else {
+        // get values from the query
+        var data = req.query;
+        if (data.judge) {
+            // if searching the judge, show this judge's info
+            handledata.search('judges', {'name': data.judge}, function (err, r) {
+                res.render('A2_1', {"aresult": req.session.admin[0], "result": r});
+            })
+        } else {
+            // otherwise, show all judges' info
+            handledata.fsort('judges', {'id': 1}, function (r) {
+                res.render('A2', {"aresult": req.session.admin[0], "result": r});
+            })
+        }
     }
 })
 router.post('/',function (req,res) {

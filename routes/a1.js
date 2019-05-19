@@ -3,18 +3,23 @@ var router = express.Router();
 var handledata = require('../service/HandleData');
 /* GET teams listing. */
 router.get('/', function (req, res){
-    // get the query
-    var data = req.query;
-    if(data.team){
-        // if searching the team, show info of this team
-        handledata.search('teams',{'name':data.team},function(err,r){
-            res.render('A1_1',{"aresult":req.session.admin[0],"result":r});
-        })
-    }else{
-        // otherwise, show all teams' data
-        handledata.fsort('teams',{'id':1},function(r){
-            res.render('A1',{"aresult":req.session.admin[0],"result":r});
-        })
+    // check session
+    if(!req.session.admin)
+        res.redirect('/');
+    else {
+        // get the query
+        var data = req.query;
+        if (data.team) {
+            // if searching the team, show info of this team
+            handledata.search('teams', {'name': data.team}, function (err, r) {
+                res.render('A1_1', {"aresult": req.session.admin[0], "result": r});
+            })
+        } else {
+            // otherwise, show all teams' data
+            handledata.fsort('teams', {'id': 1}, function (r) {
+                res.render('A1', {"aresult": req.session.admin[0], "result": r});
+            })
+        }
     }
 })
 

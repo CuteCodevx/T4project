@@ -24,8 +24,10 @@
             <div class="mdl-layout-spacer"></div>
             <!--navigation bar-->
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href=""><i class="material-icons">account_circle</i> <%-aresult.name%> </a>
-                <a class="mdl-navigation__link" href="/login"><i class="material-icons">power_settings_new</i> Sign out </a>
+                <a class="mdl-navigation__link" href=""><i class="material-icons">account_circle</i> <%- aresult.name %>
+                </a>
+                <a class="mdl-navigation__link" href="/login"><i class="material-icons">power_settings_new</i> Sign out
+                </a>
             </nav>
         </div>
         <!-- Tabs -->
@@ -39,8 +41,8 @@
     <!--drawer-->
 
     <main class="mdl-layout__content">
-            <input type="hidden" name="adminNum" value="3">
-            <section class="mdl-layout__tab-panel is-active" id="scroll-tab-2">
+        <input type="hidden" name="adminNum" value="3">
+        <section class="mdl-layout__tab-panel is-active" id="scroll-tab-2">
             <div class="page-content">
                 <!-- judge management goes here -->
                 <!-- judge management goes here -->
@@ -53,16 +55,22 @@
                                 <h1 class="mdl-card__title-text">Add Judge Account</h1>
                             </div>
                             <div class="mdl-card__supporting-text scrollable">
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">
-                                    <input class="mdl-textfield__input" type="text" id="judgeUsername" name="judgeUsername" required>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                                     style="width: 100%;">
+                                    <input class="mdl-textfield__input" type="text" id="judgeUsername"
+                                           name="judgeUsername" required>
                                     <label class="mdl-textfield__label" for="judgeUsername">username</label>
                                 </div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">
-                                    <input class="mdl-textfield__input" type="password" id="judgePassword" name="judgePassword" required>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                                     style="width: 100%;">
+                                    <input class="mdl-textfield__input" type="password" id="judgePassword"
+                                           name="judgePassword" required>
                                     <label class="mdl-textfield__label" for="judgePassword">password</label>
                                 </div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">
-                                    <select class="mdl-textfield__input" id="judgePermission" name="judgePermission" required>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                                     style="width: 100%;">
+                                    <select class="mdl-textfield__input" id="judgePermission" name="judgePermission"
+                                            required>
                                         <option></option>
                                         <option value="1">Volunteer Judge</option>
                                         <option value="2">Expert Judge</option>
@@ -87,20 +95,27 @@
                                 <h1 class="mdl-card__title-text">Add Team</h1>
                             </div>
                             <div class="mdl-card__supporting-text scrollable">
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">
-                                    <input class="mdl-textfield__input" type="text" id="teamName" name="teamName" required>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                                     style="width: 100%;">
+                                    <input class="mdl-textfield__input" type="text" id="teamName" name="teamName"
+                                           required>
                                     <label class="mdl-textfield__label" for="teamName">Team Name</label>
                                 </div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">
-                                    <input class="mdl-textfield__input" type="text" id="teamManager" name="teamManager" required>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                                     style="width: 100%;">
+                                    <input class="mdl-textfield__input" type="text" id="teamManager" name="teamManager"
+                                           required>
                                     <label class="mdl-textfield__label" for="teamManager">Manager</label>
                                 </div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                                     style="width: 100%;">
                                     <input class="mdl-textfield__input" type="email" id="eMail" name="eMail" required>
                                     <label class="mdl-textfield__label" for="eMail">E-Mail</label>
                                 </div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">
-                                    <input class="mdl-textfield__input" type="number" id="phoneNumber" name="phoneNumber" required>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                                     style="width: 100%;">
+                                    <input class="mdl-textfield__input" type="number" id="phoneNumber"
+                                           name="phoneNumber" required>
                                     <label class="mdl-textfield__label" for="phoneNumber">Phone Number</label>
                                 </div>
                             </div>

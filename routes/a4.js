@@ -7,11 +7,13 @@ var scoring=require('./scoring');
 router.get('/', function (req, res){
     // check session
     if(!req.session.admin)
-        res.redirect('/login');
+        res.redirect('/');
+    else{
     // show challenges' info
     challengemodel.findOne({'index':[1,2,3,4,5,6,7]},function(err,r){
         res.render('A4',{"aresult":req.session.admin[0],"cresult":r});
     })
+    }
 })
 router.post('/',function (req,res) {
     // use min function to calculate & update minimum time

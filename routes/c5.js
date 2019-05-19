@@ -5,7 +5,8 @@ var handledata = require('../service/HandleData');
 router.get('/', function (req, res){
     // session check
     if(!req.session.judge)
-        res.redirect('/login');
+        res.redirect('/');
+    else{
     // show challenge 5 info
     handledata.search('teams',{},function(err,rr){
         handledata.search('challenges',{'index':5},function(err,r) {
@@ -18,6 +19,7 @@ router.get('/', function (req, res){
             });
         })
     })
+    }
 })
 router.post('/',function (req,res) {
     // find the competing team, update its result & refresh the page for next attempt

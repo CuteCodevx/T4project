@@ -3,8 +3,13 @@ var router = express.Router();
 var handledata = require('../service/HandleData');
 /* GET adding page. */
 router.get('/', function (req, res){
-    // show admin accounts
-    res.render('A3',{"aresult":req.session.admin[0]});
+    // check session
+    if(!req.session.admin)
+        res.redirect('/');
+    else {
+        // show admin accounts
+        res.render('A3', {"aresult": req.session.admin[0]});
+    }
 })
 
 router.post('/',function (req,res) {

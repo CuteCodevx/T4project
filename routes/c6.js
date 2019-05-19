@@ -5,13 +5,15 @@ var handledata = require('../service/HandleData');
 router.get('/', function (req, res){
     // session check
     if(!req.session.judge)
-        res.redirect('/login');
+        res.redirect('/');
+    else{
     // show challenge 6 info
     handledata.search('teams',{},function(err,rr){
         handledata.search('challenges',{'index':6},function(err,r) {
             res.render('C6', {"jresult": req.session.judge[0], "tresult": rr, "status": r[0].status});
         })
     })
+    }
 })
 router.post('/',function (req,res) {
     // find the competing team, update its result & refresh the page for next team

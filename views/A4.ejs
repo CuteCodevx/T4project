@@ -59,7 +59,7 @@
                                                  style="width: 100%;">
                                                 <select class="mdl-textfield__input" id="challengeName" name="name">
                                                     <% for(var i = 0;i < cresult.name.length;i++){ %>
-                                                    <option><%- cresult.name[i] %></option>
+                                                        <option><%- cresult.name[i] %></option>
                                                     <% } %>
                                                 </select>
                                                 <label class="mdl-textfield__label"
@@ -99,12 +99,12 @@
                                         </thead>
                                         <tbody>
                                         <% for(var i = 0;i < 7;i++){ %>
-                                        <tr>
-                                            <td><%- cresult.name[i] %></td>
-                                            <td><input type="date" name="date" value=<%- cresult.date[i] %>></td>
-                                            <td><input type="time" name="start" value=<%- cresult.start[i] %>></td>
-                                            <td><input type="time" name="end" value=<%- cresult.end[i] %>></td>
-                                        </tr>
+                                            <tr>
+                                                <td><%- cresult.name[i] %></td>
+                                                <td><input type="date" name="date" value=<%- cresult.date[i] %>></td>
+                                                <td><input type="time" name="start" value=<%- cresult.start[i] %>></td>
+                                                <td><input type="time" name="end" value=<%- cresult.end[i] %>></td>
+                                            </tr>
                                         <% } %>
                                         </tbody>
                                     </table>

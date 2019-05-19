@@ -9,13 +9,14 @@
     <link rel="icon" href="/images/title-logo.png" sizes="32x32">
 
 </head>
-<%for(var i=0;i<result.length;i++){ %>
+<% for(var i = 0;i < result.length;i++){ %>
 <form action="" id="A2Form2" method="post">
     <div class="mdl-grid">
         <div class="mdl-layout-spacer"></div>
         <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--8-col">
             <div class="mdl-card__title">
-                <h1 class="mdl-card__title-text"><input type="hidden" name="oldname" value="<%=result[i].name%>"><%=result[i].name%></h1>
+                <h1 class="mdl-card__title-text"><input type="hidden" name="oldname"
+                                                        value="<%= result[i].name %>"><%= result[i].name %></h1>
             </div>
             <div class="mdl-card__supporting-text scrollable">
                 <div class="mdui-table-fluid">
@@ -29,16 +30,16 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td><input type="text" name="name" value=<%=result[i].name%>></td>
-                            <td><input type="text" name="password" value=<%=result[i].password%>></td>
-                            <td><input type="text" name="permisson" value=<%=result[i].permission%>></td>
+                            <td><input type="text" name="name" value=<%= result[i].name %>></td>
+                            <td><input type="text" name="password" value=<%= result[i].password %>></td>
+                            <td><input type="text" name="permisson" value=<%= result[i].permission %>></td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="mdl-card__actions">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" >
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                     Confirm
                 </button>
             </div>

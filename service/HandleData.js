@@ -12,7 +12,7 @@ var database='Piwar';
 var handledata={
     // search
     search:function (form,condition,callback) {
-        MongoClient.connect(DBurl,function (err,db) {
+        MongoClient.connect(DBurl,{ useNewUrlParser: true },function (err,db) {
             if(err){
                 console.log(err);
                 console.log("can't connect to the database!");
@@ -28,7 +28,7 @@ var handledata={
     },
     // insert
     insert:function(form,data){
-        MongoClient.connect(DBurl,function (err,db) {
+        MongoClient.connect(DBurl,{ useNewUrlParser: true },function (err,db) {
             if(err){
                 console.log(err);
                 console.log("can't connect to the database!");
@@ -46,7 +46,7 @@ var handledata={
     },
     // update
     update:function (form,condition,data) {
-        MongoClient.connect(DBurl,function (err,db) {
+        MongoClient.connect(DBurl,{ useNewUrlParser: true },function (err,db) {
             if(err){
                 console.log(err);
                 console.log("can't connect to the database!");
@@ -62,7 +62,7 @@ var handledata={
     },
     // find & sort
     fsort:function (form,condition,callback) {
-        MongoClient.connect(DBurl,function (err,db) {
+        MongoClient.connect(DBurl,{ useNewUrlParser: true },function (err,db) {
             if(err){
                 console.log(err);
                 console.log("can't connect to the database!");

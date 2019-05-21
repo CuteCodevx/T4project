@@ -14,7 +14,7 @@ router.get('/', function (req, res){
 
 router.post('/',function (req,res) {
     //compare the input content is adding team or adding judge
-    console.log(req.body);
+    //console.log(req.body);
     if(req.body.judgePermission){
         //add judge account
         var name = req.body.judgeUsername;

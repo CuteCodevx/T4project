@@ -14,6 +14,7 @@
 
 </head>
 <body>
+<!--competition management page-->
 <!-- Simple header with scrollable tabs. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button">
     <header class="mdl-layout__header">
@@ -24,7 +25,7 @@
             <div class="mdl-layout-spacer"></div>
             <!--navigation bar-->
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href=""><i class="material-icons">account_circle</i> <%- aresult.name %>
+                <a class="mdl-navigation__link"><i class="material-icons">account_circle</i> <%- aresult.name %>
                 </a>
                 <a class="mdl-navigation__link" href="/login"><i class="material-icons">power_settings_new</i> Sign out
                 </a>
@@ -38,7 +39,7 @@
             <a href="#scroll-tab-3" class="mdl-layout__tab is-active">competition management</a>
         </div>
     </header>
-    <!--drawer-->
+
 
     <main class="mdl-layout__content">
         <input type="hidden" name="adminNum" value="4">
@@ -55,6 +56,7 @@
                                 <table style="width: 100%">
                                     <tr>
                                         <td style="width: 100%; text-align: center">
+<!--                                            selection of challenge-->
                                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
                                                  style="width: 100%;">
                                                 <select class="mdl-textfield__input" id="challengeName" name="name">
@@ -70,6 +72,7 @@
                                 </table>
                             </div>
                             <div class="mdl-card__actions mdl-card--border">
+<!--                                stop button for stopping selected competition-->
                                 <button type="submit"
                                         class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                     Stop
@@ -79,6 +82,7 @@
                         <div class="mdl-layout-spacer"></div>
                     </div>
                 </form>
+<!--                challenge time management table-->
                 <form id="challengeTimetableForm">
                     <div class="mdl-grid">
                         <div class="mdl-layout-spacer"></div>
@@ -120,9 +124,6 @@
                         <div class="mdl-layout-spacer"></div>
                     </div>
                 </form>
-
-                <!-- judge management goes here -->
-
             </div>
         </section>
         <footer class="mdl-mini-footer">

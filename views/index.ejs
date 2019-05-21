@@ -54,7 +54,10 @@
                     <% if(end === true){ %>
                         <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/final">FINAL SCORE</a>
                     <% }else{ %>
-                        <a class="mdl-navigation__link mdl-typography--text-uppercase">CHALLENGES NOT FINISHED</a>
+                        <a class="mdl-navigation__link mdl-typography--text-uppercase" id="navNotification">FINAL SCORE</a>
+                        <div class="mdl-tooltip" for="navNotification">
+                            All challenges has not been completed yet<br> please try again later
+                        </div>
                     <% } %>
                     <a class="mdl-navigation__link mdl-typography--text-uppercase"
                        mdui-dialog="{target: '#loginDialog'}">LOGIN</a>
@@ -75,7 +78,12 @@
             <% if(end === true){ %>
                 <a class="mdl-navigation__link" href="/final">FINAL SCORE</a>
             <% }else{ %>
-                <a class="mdl-navigation__link">CHALLENGES NOT FINISHED</a>
+                <a class="mdl-navigation__link" id="drawerNotification">FINAL SCORE</a>
+                <!-- Rich Tooltip -->
+                <div class="mdl-tooltip" for="drawerNotification">
+                    All challenges has not been completed yet<br> please try again later
+                </div>
+
             <% } %>
         </nav>
     </div>

@@ -1,25 +1,25 @@
 /**
  * This file is used for administrator management.
  */
-$(document).ready(function() {
+$(document).ready(function () {
 
 
     /**
      * This function is used to change judge account.
      */
-    $('#A2Form2').on('submit',function () {
+    $('#A2Form2').on('submit', function () {
         event.preventDefault();
         //judge info
-        var d=$(this).serialize();
+        var d = $(this).serialize();
         $.ajax({
-            url:'/a2',
-            type:'post',
-            data:d,
-            dataType:'json',
-            error:function (result) {
-                if(result.status == 200){
+            url: '/a2',
+            type: 'post',
+            data: d,
+            dataType: 'json',
+            error: function (result) {
+                if (result.status == 200) {
                     alert("Successfully changed!");
-                    location.href='A2';
+                    location.href = 'A2';
                 }
             }
         });
@@ -29,8 +29,15 @@ $(document).ready(function() {
     /**
      * the password input area will be shown when user check the reset tag.
      */
-    $('#resetPwd').click(function(){
+    $('#resetPwd').click(function () {
         $('#hiddenResetPwd').show();
     });
 
 });
+
+function resetPassword(id) {
+    var textField = document.getElementById("hiddenResetPwd");
+    var button = document.getElementById("resetPasswordButton")
+    textField.style.display = "block";
+    button.style.display = "none";
+}

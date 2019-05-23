@@ -30,7 +30,6 @@ router.post('/',function (req,res) {
     var oldname = req.body.oldname;
     // update values
     handledata.search('judges',{'name':oldname},function (err,r) {
-        var oldname = r[0].name;
         handledata.update('judges',{'name':oldname},{'name':name,'password':psw,'permission':Number(permission)});
     })
     // trigger ajax success function

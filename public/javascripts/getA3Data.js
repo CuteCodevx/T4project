@@ -17,7 +17,6 @@ $(document).ready(function() {
             data:d,
             dataType:'json',
             success:function (result) {
-                console.log(result);
                 if(result.status == 200){
                     alert("Successfully Added!");
                     location.href='A3';

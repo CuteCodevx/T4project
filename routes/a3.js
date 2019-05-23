@@ -29,9 +29,7 @@ router.post('/',function (req,res) {
         var email = req.body.eMail;
         var number = req.body.phoneNumber;
         handledata.insert('teams',{'name':name,'manager':manager,'email':email,'phone_number':number});
-        handledata.fsort('teams',{'id':1},function(r){
-            res.render('A1',{"aresult":req.session.admin[0],"result":r});
-        })
+        res.sendStatus(200);
     }
 
 })

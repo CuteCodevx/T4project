@@ -26,15 +26,10 @@ $(document).ready(function () {
     });
 
 
-    /**
-     * the password input area will be shown when user check the reset tag.
-     */
-    $('#resetPwd').click(function () {
-        $('#hiddenResetPwd').show();
-    });
-
 });
-
+/**
+ * the password input area will show off after user click the reset password button.
+ */
 function resetPassword(id) {
     var textField = document.getElementById("hiddenResetPwd");
     var button = document.getElementById("resetPasswordButton")

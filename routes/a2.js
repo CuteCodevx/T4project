@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var handledata = require('../service/HandleData');
+var md5Ecryption = require('../service/md5Ecryption');
+
+
 /* GET judges' data. */
 router.get('/', function (req, res){
     // check session
@@ -22,6 +25,8 @@ router.get('/', function (req, res){
         }
     }
 })
+
+
 router.post('/',function (req,res) {
     // get values from pages
     var name =req.body.name;
@@ -30,7 +35,7 @@ router.post('/',function (req,res) {
     var oldname = req.body.oldname;
     // update values
     handledata.search('judges',{'name':oldname},function (err,r) {
-        handledata.update('judges',{'name':oldname},{'name':name,'password':psw,'permission':Number(permission)});
+        handledata.update('judges',{'name':oldname},{'name':name,'password':md5Ecryption.encryptPwd(name,psw),'permission':Number(permission)});
     })
     // trigger ajax success function
     res.sendStatus(200);

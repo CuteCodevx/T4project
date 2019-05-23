@@ -24,4 +24,13 @@ $(document).ready(function() {
             }
         });
     });
+
+
+    /**
+     * the password input area will be shown when user check the reset tag.
+     */
+    $('#resetPwd').click(function(){
+        $('#hiddenResetPwd').show();
+    });
+
 });

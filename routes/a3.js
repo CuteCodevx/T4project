@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var handledata = require('../service/HandleData');
+var md5Ecryption = require('../service/md5Ecryption');
+
+
 /* GET adding page. */
 router.get('/', function (req, res){
     // check session
@@ -19,7 +22,7 @@ router.post('/',function (req,res) {
         var name = req.body.judgeUsername;
         var psw = req.body.judgePassword;
         var permission = req.body.judgePermission;
-        handledata.insert('judges',{'name':name,'password':psw,'permission':permission});
+        handledata.insert('judges',{'name':name,'password':md5Ecryption.encryptPwd(name,psw),'permission':permission});
         res.sendStatus(200);
     }else{
         // add team account

@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var handledata=require('../service/HandleData');
+var md5Ecryption = require('../service/md5Ecryption');
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     // clear the session
@@ -20,9 +23,15 @@ router.get('/', function(req, res, next) {
         });
     });
 });
+
+
 router.post('/', function(req, res, next) {
     // record login condition
-    var condition={"name":req.body.username,"password":req.body.password};
+    var inputName = req.body.username;
+    var inputPassword = req.body.password;
+    var saltedPassword = md5Ecryption.encryptPwd(inputName,inputPassword);
+    var condition={"name":inputName,"password":saltedPassword};
+
     // check the condition
     handledata.search('admins',condition,function(err,result){
         if(result.length>0){

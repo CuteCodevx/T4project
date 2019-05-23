@@ -1,10 +1,4 @@
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Pi-wars</title>
-    <link rel="icon" href="/images/title-logo.png" sizes="32x32">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -33,25 +27,22 @@
                         <thead>
                         <tr>
                             <td>Name</td>
-                            <td>Password</td>
                             <td>Permission</td>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td><input class="mdl-textfield__input" type="text" name="name" value=<%= result[i].name %>></td>
-                            <td><input class="mdl-textfield__input" name="password" value=<%= result[i].password %>></td>
-<!--                            <td><input type="text" name="permission" value=<%= result[i].permission %>></td>-->
+                            <td><input type="text" name="name" value=<%= result[i].name %>></td>
+                            <td><input type="text" name="permission" value=<%= result[i].permission %>></td>
+                        </tr>
+                        <tr>
                             <td>
-                            <select class="mdui-select" name="permission" >
-                                <% if(result[i].permission === 1){ %>
-                                    <option value="1" selected>Volunteer Judge</option>
-                                    <option value="2">Expert Judge</option>
-                                <% }else{ %>
-                                        <option value="1">Volunteer Judge</option>
-                                        <option value="2" selected>Expert Judge</option>
-                                <% } %>
-                            </select>
+                                <input type="checkbox" id="resetPwd" name="resetPwd">reset password
+                            </td>
+                            <td>
+                                <div id="hiddenResetPwd" style="display:none">
+                                    <input type="password" id="password" name="password">
+                                </div>
                             </td>
                         </tr>
                         </tbody>

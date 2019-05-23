@@ -16,13 +16,12 @@ $(document).ready(function() {
             type:'post',
             data:d,
             dataType:'json',
-            success:function (result) {
+            error:function (result) {
                 if(result.status == 200){
                     alert("Successfully changed!");
                     location.href='A2';
                 }
-            },
-
-        })
-    })
+            }
+        });
+    });
 });

@@ -124,9 +124,8 @@ router.post('/',function (req,res) {
             {'name':name,'manager':manager,'phone_number':number,'email':email,'C1_1_time':C1_1_time,'C2_1_time':C2_1_time,'C3_1_time':C3_1_time,'C5_1_time':C5_1_time,'C7_1_time':C7_1_time,'C1_2_time':C1_2_time,'C2_2_time':C2_2_time,'C3_2_time':C3_2_time,'C5_2_time':C5_2_time,'C7_2_time':C7_2_time,'C1_3_time':C1_3_time,'C2_3_time':C2_3_time,'C3_3_time':C3_3_time,'C5_3_time':C5_3_time,'C7_3_time':C7_3_time,'C1_1_reward':C1_1_reward,'C2_1_reward':C2_1_reward,'C3_1_reward':C3_1_reward,'C5_1_reward':C5_1_reward,'C7_1_reward':C7_1_reward,'C1_2_reward':C1_2_reward,'C2_2_reward':C2_2_reward,'C3_2_reward':C3_2_reward,'C5_2_reward':C5_2_reward,'C7_2_reward':C7_2_reward,'C1_3_reward':C1_3_reward,'C2_3_reward':C2_3_reward,'C3_3_reward':C3_3_reward,'C5_3_reward':C5_3_reward,'C7_3_reward':C7_3_reward,'C4_win':C4_win,'C4_reward':C4_reward,'C1score':C1score,'C2score':C2score,'C3score':C3score,'C4score':C4score,'C5score':C5score,'C6score':C6score,'C7score':C7score,'C8score':C8score,'Cscore':Number(Cscore)
         })
     })
-    handledata.fsort('teams',{'id':1},function(r){
-        res.render('A1',{"aresult":req.session.admin[0],"result":r});
-    })
+    // trigger ajax success function
+    res.sendStatus(200);
 })
 
 module.exports=router;

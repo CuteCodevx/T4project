@@ -52,51 +52,5 @@ $(document).ready(function() {
 
     });
 
-    $('#A3Form1').on('submit',function () {
-        event.preventDefault();
-        var d=$(this).serialize();
-        $.ajax({
-            url:'/a3',
-            type:'post',
-            data:d,
-            dataType:'json',
-            success:function (result) {
-                console.log(result);
-                if(result.status == 200){
-                    alert("Successfully Added!");
-                    location.href='A3';
-                }
 
-            },
-            error:function (err) {
-                if(err.status ==200){
-                    alert("Successfully Added!");
-                    location.href='A3';
-                }
-
-            }
-        })
-    })
-    $('#A3Form2').on('submit',function () {
-        event.preventDefault();
-        var d=$(this).serialize();
-        $.ajax({
-            url:'/a3',
-            type:'post',
-            data:d,
-            dataType:'json',
-            success:function (result) {
-                if(result.status == 200){
-                    alert("Successfully Added!");
-                    location.href='A3';
-                }
-            },
-            error:function (err) {
-                if(err.status == 200){
-                    alert("Successfully Added!");
-                    location.href='A3';
-                }
-            }
-        })
-    })
 });

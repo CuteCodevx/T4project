@@ -1,4 +1,10 @@
 <head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Pi-wars</title>
+    <link rel="icon" href="/images/title-logo.png" sizes="32x32">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -13,49 +19,59 @@
 </head>
 
 <% for(var i = 0;i < result.length;i++){ %>
-    <form id="A2Form2" action="">
+<form id="A2Form2" action="">
     <div class="mdl-grid">
         <div class="mdl-layout-spacer"></div>
         <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--8-col">
             <div class="mdl-card__title">
                 <h1 class="mdl-card__title-text"><input type="hidden" name="oldname"
-                                                        value="<%= result[i].name %>"><%= result[i].name %></h1>
+                    value="<%= result[i].name %>"><%= result[i].name %></h1>
             </div>
             <div class="mdl-card__supporting-text scrollable">
                 <div class="mdui-table-fluid">
                     <table class="mdui-table">
                         <thead>
-                        <tr>
-                            <td>Name</td>
-                            <td>Permission</td>
-                        </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>Permission</td>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td><input type="text" name="name" value=<%= result[i].name %>></td>
-                            <td><input type="text" name="permission" value=<%= result[i].permission %>></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" id="resetPwd" name="resetPwd">reset password
-                            </td>
-                            <td>
-                                <div id="hiddenResetPwd" style="display:none">
-                                    <input type="password" id="password" name="password">
-                                </div>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td><input class="mdl-textfield__input" type="text" name="name" value=<%= result[i].name %>></td>
+                                <td>
+                                    <select class="mdui-select" name="permission" >
+                                        <% if(result[i].permission === 1){ %>
+                                    <option value="1" selected>Volunteer Judge</option>
+                                        <option value="2">Expert Judge</option>
+                                        <% }else{ %>
+                                    <option value="1">Volunteer Judge</option>
+                                        <option value="2" selected>Expert Judge</option>
+                                        <% } %>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" id="resetPwd" name="resetPwd">reset password
+                                </td>
+                                <td>
+                                    <div id="hiddenResetPwd" style="display:none">
+                                        <input type="password" id="password" name="password">
+                                    </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="mdl-card__actions">
                 <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                    Confirm
+                Confirm
                 </button>
             </div>
         </div>
         <div class="mdl-layout-spacer"></div>
     </div>
-    </form>
+</form>
 <% } %>

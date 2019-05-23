@@ -35,7 +35,12 @@ router.post('/',function (req,res) {
     var oldname = req.body.oldname;
     // update values
     handledata.search('judges',{'name':oldname},function (err,r) {
-        handledata.update('judges',{'name':oldname},{'name':name,'password':md5Ecryption.encryptPwd(name,psw),'permission':Number(permission)});
+        if(psw==null){
+            handledata.update('judges',{'name':oldname},{'name':name,'permission':Number(permission)});
+        }else{
+            handledata.update('judges',{'name':oldname},{'name':name,'password':md5Ecryption.encryptPwd(name,psw),'permission':Number(permission)});
+        }
+
     })
     // trigger ajax success function
     res.sendStatus(200);
